@@ -97,7 +97,7 @@ public final class MultiSlider extends JPanel implements ValueChangeListener {
                         break;
                     }
                 }
-                if (!value_ok) tab_value += this.step_size);
+                if (!value_ok) tab_value += this.step_size;
             }
         }
 

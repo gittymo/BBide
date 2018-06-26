@@ -6,21 +6,29 @@
 package com.plus.mevanspn.bridge;
 
 /**
- *
+ * A class that implements the DFSFile interface must provide the basic methods 
+ * that control the flow of catalogue information and data between a real-world 
+ * file and the DFS file system.
+ * 
  * @author win10
  */
-public class DFSFile {
-	String name;											// 7 chars max
-	int load_addr, exec_addr, length; // All 18 bits
-	short start_sector;								// 10 bits
-	char directory;										// Just one character!
-	
-	DFSFile(String name, char dir, int length, short start_sector) {
-		this.name = (name.length() > 7) ? name.substring(0, 7) : name;
-		this.directory = dir;
-		this.load_addr = this.exec_addr = 0;
-		this.length = length;
-		this.start_sector = start_sector;
-	}
+public interface DFSFile {
+    /**
+     * Returns the file name of the file.
+     * @return A reflection of the filename stored within a DFS Disk catalogue.
+     */
+    public String getFileName();
+    public void setFileName(String file_name);
+    public int getLoadAddress();
+    public void setLoadAddress(int load_address);
+    public int getExecAddress();
+    public void setExecAddress(int exec_address);
+    public short getStartSector();
+    public void setStartSection(short start_sector);
+    public char getDirectory();
+    public void setDirectory(char directory);
+    public DFSDisk getParentDisk();
+    public void setParentDisk(DFSDisk parent_disk);
+    public int getLength();
+    public char[] getData();
 }
-

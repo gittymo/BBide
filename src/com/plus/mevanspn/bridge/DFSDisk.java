@@ -41,11 +41,11 @@ public class DFSDisk {
 				}
 				// Write file and directory details for all files
 				for (DFSFile file : this.files) {
-					dos.write(file.name.getBytes());
-					if (file.name.length() < 7) {
-						dos.write(new byte[7 - file.name.length()]);
+					dos.write(file.getFileName().getBytes());
+					if (file.getFileName().length() < 7) {
+						dos.write(new byte[7 - file.getFileName().length()]);
 					}
-					dos.writeByte(file.directory);
+					dos.writeByte(file.getDirectory());
 				}
 				// Now pad and remaining space in the sector
 				for (int i = 31; i > files.size(); i--) {
@@ -74,18 +74,18 @@ public class DFSDisk {
 				dos.writeByte(this.format.getValue() & 0xFF);
 				// Write file length, start sector, load & exec data
 				for (DFSFile file : this.files) {
-					dos.writeByte(file.load_addr & 0xFF);
-					dos.writeByte((file.load_addr & 0xFF00) >> 8);
-					dos.writeByte(file.exec_addr & 0xFF);
-					dos.writeByte((file.exec_addr & 0xFF00) >> 8);
-					dos.writeByte(file.length & 0xFF);
-					dos.writeByte((file.length & 0xFF00) >> 8);
-					dos.writeByte(((file.start_sector & 0x300) >> 8)
-									+ ((file.load_addr & 0x30000) >> 14)
-									+ ((file.length & 0x30000) >> 12)
-									+ ((file.exec_addr & 0x30000) >> 10)
+					dos.writeByte(file.getLoadAddress() & 0xFF);
+					dos.writeByte((file.getLoadAddress() & 0xFF00) >> 8);
+					dos.writeByte(file.getExecAddress() & 0xFF);
+					dos.writeByte((file.getExecAddress() & 0xFF00) >> 8);
+					dos.writeByte(file.getLength() & 0xFF);
+					dos.writeByte((file.getLength() & 0xFF00) >> 8);
+					dos.writeByte(((file.getStartSector() & 0x300) >> 8)
+									+ ((file.getLoadAddress() & 0x30000) >> 14)
+									+ ((file.getLength() & 0x30000) >> 12)
+									+ ((file.getExecAddress() & 0x30000) >> 10)
 					);
-					dos.writeByte(file.start_sector & 0xFF);
+					dos.writeByte(file.getStartSector() & 0xFF);
 				}
 				// Now pad and remaining space in the sector
 				for (int i = 31; i > files.size(); i--) {
@@ -108,7 +108,7 @@ public class DFSDisk {
 		double free = (format.getValue() - 2) * free_format.getValue();
 		if (files.size() > 0) {
 			for (DFSFile file : files) {
-				double file_sectors = Math.ceil((double) file.length /
+				double file_sectors = Math.ceil((double) file.getLength() /
 								(256.0d / free_format.getValue()));
 				free -= (int) file_sectors;
 			}
@@ -116,32 +116,29 @@ public class DFSDisk {
 		return (int) free;
 	}
 	
-	public DFSFile createFile(String name, char dir, int length) throws CatalogueFullException, DiskFullException {
+	public int testAddFile(String name, char dir, int length) throws CatalogueFullException, DiskFullException {
 		if (files.size() == 31) throw new CatalogueFullException();
 		if (this.getFreeSpace(FreeSpaceFormat.SECTORS) * 256 < length)
 			throw new DiskFullException();
-		DFSFile new_file = null;
 		short next_start_sector = 2;
 		if (files.size() > 1) {
 			// If there are files in the catalogue, sort by start_sector, ascending.
 			Collections.sort(files, new Comparator<DFSFile>() {
 				@Override
 				public int compare(DFSFile file1, DFSFile file2) {
-					return file1.start_sector - file2.start_sector;
+					return file1.getStartSector() - file2.getStartSector();
 				}
 			});
 		}
 		// Now look for any space between files where the new file may fit.
 		for (int i = 0; i < files.size(); i++) {
-			short file_sector_len = (short) Math.ceil(files.get(i).length / 256.0);
-			next_start_sector = (short) (files.get(i).start_sector + file_sector_len);
+			short file_sector_len = (short) Math.ceil(files.get(i).getLength() / 256.0);
+			next_start_sector = (short) (files.get(i).getStartSector() + file_sector_len);
 			if (i + 1 != files.size() &&
-							256 * (files.get(i+1).start_sector - next_start_sector) >= length) break;
+                            256 * (files.get(i+1).getStartSector() - next_start_sector) >= length) break;
 		}
 		
-		new_file = new DFSFile(name, dir, length, (short) next_start_sector);
-		files.add(new_file);
-		return new_file;
+		return next_start_sector;
 	}
 
 	public enum DiskFormat {
