@@ -1,4 +1,4 @@
 package com.plus.mevanspn.bridge;
 
-public class InvalidAddressModeException {
+public class InvalidAddressModeException extends Exception {
 }
