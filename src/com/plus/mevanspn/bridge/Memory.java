@@ -25,12 +25,18 @@ public class Memory {
 	}
 
 	public char getValueAt(int offset, OpCode.AddressMode addressMode)
-		throws InvalidAddressModeException, InvalidAddressException  {
+		throws InvalidAddressModeException, InvalidAddressException
+	{
 		if (offset < 0 || offset > 32767) throw new InvalidAddressException();
+		if (offset > 255 && (
+						addressMode != OpCode.AddressMode.Absolute && 
+						addressMode != OpCode.AddressMode.AbsoluteX &&
+						addressMode != OpCode.AddressMode.AbsoluteY
+				)) throw new InvalidAddressException();
 		switch (addressMode) {
 			case Immediate: throw new InvalidAddressModeException();
-			case ZeroPage: return memory[offset % 256];
-			case ZeroPageX: return memory[(offset % 256) + registers.get('X')];
+			case ZeroPage: return memory[offset];
+			case ZeroPageX: return memory[offset + registers.get('X')];
 			case Absolute: return memory[offset];
 			case AbsoluteX: {
 				int xOffset = offset + registers.get('X');
@@ -56,10 +62,60 @@ public class Memory {
 				int indirectAddress =
 								(memory[offset] & 255) + ((memory[offset + 1] & 255) << 8) +
 												registers.get('Y');
-
+				
 				return memory[indirectAddress];
 			}
 			default: throw new InvalidAddressException();
+		}
+	}
+	
+	public void setValueAt(char value, int offset, OpCode.AddressMode addressMode)
+		throws InvalidAddressModeException, InvalidAddressException
+	{
+		if (offset < 0 || offset > 32767) throw new InvalidAddressException();
+		if (offset > 255 && (
+						addressMode != OpCode.AddressMode.Absolute && 
+						addressMode != OpCode.AddressMode.AbsoluteX &&
+						addressMode != OpCode.AddressMode.AbsoluteY
+				)) throw new InvalidAddressException();
+		switch (addressMode) {
+			case Immediate : throw new InvalidAddressModeException();
+			case ZeroPage :
+			case Absolute : {
+				memory[offset] = value;
+			} break;
+			
+			case ZeroPageX : {
+				memory[offset + registers.get('X')] = value;
+			} break;
+			
+			case AbsoluteX : {
+				if (offset + registers.get('X') > 32767)
+					throw new InvalidAddressException();
+				memory[offset + registers.get('X')] = value;
+			} break;
+			
+			case AbsoluteY : {
+				if (offset + registers.get('Y') > 32767)
+					throw new InvalidAddressException();
+				memory[offset + registers.get('Y')] = value;
+			} break;
+			
+			case PreIndirectX : {
+				int baseOffset = offset + registers.get('X');
+				int indirectAddress =
+								(memory[baseOffset] & 255) + ((memory[baseOffset + 1] & 255) << 8);
+				memory[indirectAddress] = value;
+			} break;
+			
+			case PostIndirectY : {
+				int indirectAddress =
+								(memory[offset] & 255) + ((memory[offset + 1] & 255) << 8) +
+												registers.get('Y');
+				memory[indirectAddress] = value;
+			} break;
+			
+			default : throw new InvalidAddressModeException();
 		}
 	}
 
