@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98cf8f60-1a26-4bb3-afe7-7b4c8a9f1970" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/BBIDE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BBIDE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/InvalidAddressException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/InvalidAddressException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/InvalidAddressModeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/InvalidAddressModeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/build-impl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/genfiles.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Memory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java" afterDir="false" />
@@ -19,23 +21,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="e#262#263#0" expanded="true" />
-                <element signature="e#297#298#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Memory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
-              <caret line="76" column="39" lean-forward="true" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
+              <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,8 +53,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="237">
+              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="40" column="41" lean-forward="true" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -87,19 +88,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor.java" />
-        <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java" />
         <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/InvalidAddressModeException.java" />
         <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/InvalidAddressException.java" />
-        <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java" />
         <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Memory.java" />
+        <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java" />
+        <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2172" />
-    <option name="y" value="280" />
-    <option name="width" value="1260" />
-    <option name="height" value="640" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1943" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -109,49 +110,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="BBIde" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBIde" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BBIde" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBIde" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BBIde" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBIde" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mevanspn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BBIde" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBIde" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mevanspn" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BBIde" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBIde" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mevanspn" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="Processor" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544341115627" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -185,11 +151,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4955595" visible="true" weight="0.19190283" />
-      <window_info id="Structure" order="1" sideWeight="0.5044405" side_tool="true" visible="true" weight="0.19190283" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4937833" visible="true" weight="0.1951417" />
+      <window_info id="Structure" order="1" sideWeight="0.5062167" side_tool="true" visible="true" weight="0.1951417" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -217,17 +183,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/InvalidAddressException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -242,20 +197,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Memory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
-          <caret line="76" column="39" lean-forward="true" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
+          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="40" column="41" lean-forward="true" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
         </state>
       </provider>
     </entry>

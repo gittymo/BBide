@@ -1,12 +1,27 @@
 package com.plus.mevanspn.bridge.Processor;
 
+import com.plus.mevanspn.bridge.InvalidAddressException;
+import com.plus.mevanspn.bridge.InvalidAddressModeException;
 import com.plus.mevanspn.bridge.Memory;
 
-public interface OpCode {
-	public int getASM();
-	public int getSize();
-	public void perform(Memory memory);
+public abstract class OpCode {
+	public abstract int getASM();
+	public abstract int getSize();
+	public abstract void perform(Memory memory)
+					throws InvalidAddressModeException, InvalidAddressException;
+	public void setNegativeZeroFlags(Memory memory) {
+		char currentAccumulator = memory.registers.get('A');
+		if (currentAccumulator > 127)
+			memory.flags.replace('N', Boolean.TRUE);
+		else
+			memory.flags.replace('N', Boolean.FALSE);
 
+		if (currentAccumulator == 0)
+			memory.flags.replace('Z', Boolean.TRUE);
+		else
+			memory.flags.replace('Z', Boolean.FALSE);
+
+	}
 	public enum AddressMode {
 		Immediate(2,2),
 		ZeroPage(2,3),

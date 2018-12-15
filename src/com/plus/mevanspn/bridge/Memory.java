@@ -131,8 +131,12 @@ public class Memory {
 		flags = new HashMap<Character, Boolean>();
 		flags.clear();
 		flags.put('C', false);  // Carry flag
-		flags.put('O', false);  // Overflow flag
+		flags.put('V', false);  // Overflow flag
 		flags.put('N', false);  // Negative flag
+		flags.put('B', false);  // Break flag
+		flags.put('D', false);  // Decimal flag (BCD arithmetic mode)
+		flags.put('Z', false);  // Zero flag
+		flags.put('I', false);  // Interrupt disable
 	}
 
 	private void initMemory() {
@@ -142,7 +146,7 @@ public class Memory {
 	}
 
 	private Vector<OpCode> program;
-	private HashMap<Character, Character> registers;
-	private HashMap<Character, Boolean> flags;
+	public HashMap<Character, Character> registers;
+	public HashMap<Character, Boolean> flags;
 	private char[] memory;
 }
