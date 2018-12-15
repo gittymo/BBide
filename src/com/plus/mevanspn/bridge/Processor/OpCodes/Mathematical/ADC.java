@@ -19,11 +19,20 @@ public class ADC extends com.plus.mevanspn.bridge.Processor.OpCode {
 	public void perform(Memory memory)
 					throws InvalidAddressException, InvalidAddressModeException
 	{
-		char accumulator = memory.registers.get('A');
-		char mem = memory.getValueAt(address, addressMode);
-		char total = (char) (accumulator + mem);
-		if (memory.flags.get('C')) total += 1; // Add 1 if carry flag set.
+		// We don't allow direct access to the accumulator with this opcode, so throw an exception.
+		if (addressMode == AddressMode.Accumulator)
+			throw new InvalidAddressModeException();
 
+		// Get the value from the accumulator.
+		char accumulator = memory.registers.get('A');
+		// Get the value from the memory location given.
+		char mem = memory.getValueAt(address, addressMode);
+		// Add the memory and accumulator values together.
+		char total = (char) (accumulator + mem);
+		// Add 1 if carry flag set.
+		if (memory.flags.get('C')) total += 1;
+
+		// Check if total > 255
 		if (total > 255) {
 			// Total is greater value that a byte can hold, so set carry flag.
 			memory.flags.replace('C', Boolean.TRUE);

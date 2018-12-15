@@ -65,6 +65,9 @@ public class Memory {
 				
 				return memory[indirectAddress];
 			}
+			case Accumulator: {
+				return registers.get('A');
+			}
 			default: throw new InvalidAddressException();
 		}
 	}
@@ -114,7 +117,11 @@ public class Memory {
 												registers.get('Y');
 				memory[indirectAddress] = value;
 			} break;
-			
+
+			case Accumulator : {
+				registers.replace('A', value);
+			} break;
+
 			default : throw new InvalidAddressModeException();
 		}
 	}

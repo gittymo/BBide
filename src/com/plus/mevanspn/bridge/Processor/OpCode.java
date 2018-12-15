@@ -30,7 +30,8 @@ public abstract class OpCode {
 		AbsoluteX(3,4),
 		AbsoluteY(3,4),
 		PreIndirectX(2,6),
-		PostIndirectY(2,5);
+		PostIndirectY(2,5),
+		Accumulator( 1, 2);
 
 		private int size;
 		private int time;
