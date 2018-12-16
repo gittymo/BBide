@@ -1,11 +1,11 @@
-package com.plus.mevanspn.bridge.Processor.OpCodes.Logic;
+package com.plus.mevanspn.bridge.Processor.OpCodes.Branching;
 
 import com.plus.mevanspn.bridge.InvalidAddressException;
 import com.plus.mevanspn.bridge.InvalidAddressModeException;
 import com.plus.mevanspn.bridge.Memory;
 import com.plus.mevanspn.bridge.Processor.OpCode;
 
-public class BCC extends OpCode {
+public class BEQ extends OpCode {
 
 	@Override
 	public int getASM() {
@@ -17,18 +17,18 @@ public class BCC extends OpCode {
 		return 0;
 	}
 
-	public BCC(int address) {
+	public BEQ(int address) {
 		this.address = address;
 	}
 
 	@Override
 	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException {
 		// Make sure address value is within relative range.
-		if (address < -128 || address > 100) throw new InvalidAddressException();
+		if (address < -128 || address > 127) throw new InvalidAddressException();
 		// Get the new program counter address
 		int newPCAddress = memory.registers.get("PC") + address;
-		// If the carry flag is clear (0) we can move the program counter to new address.
-		if (!memory.flags.get('C')) memory.registers.replace("PC", newPCAddress);
+		// If the zero flag is set (1) we can move the program counter to new address.
+		if (memory.flags.get('Z')) memory.registers.replace("PC", newPCAddress);
 	}
 
 	private int address;
