@@ -27,13 +27,13 @@ public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
 		if (addressMode == AddressMode.Accumulator)
 			throw new InvalidAddressModeException();
 		// Get the accumulator value
-		char accumulator = memory.registers.get('A');
+		int accumulator = memory.registers.get("A");
 		// Get the value stored in the given memory location
-		char mem = memory.getValueAt(address, addressMode);
+		int mem = memory.getValueAt(address, addressMode);
 		// AND the two together
-		char result = (char) (mem & accumulator);
+		int result = (char) (mem & accumulator);
 		// Store the result back into the accumulator.
-		memory.registers.replace('A', result);
+		memory.registers.replace("A", result);
 		// Update the negative and zero flags accordingly.
 		setNegativeZeroFlags(memory);
 	}

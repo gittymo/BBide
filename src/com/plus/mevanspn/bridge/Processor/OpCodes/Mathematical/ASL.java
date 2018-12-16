@@ -27,10 +27,10 @@ public class ASL extends OpCode {
 	@Override
 	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException {
 		// Get the base value
-		char baseValue = (addressMode == AddressMode.Accumulator) ?
-						memory.registers.get('A') : memory.getValueAt(address, addressMode);
+		int baseValue = (addressMode == AddressMode.Accumulator) ?
+						memory.registers.get("A") : memory.getValueAt(address, addressMode);
 		// Get the value shifted one place to the left (i.e. value x 2)
-		char shiftedValue = (char) (memory.registers.get('A') << 1);
+		char shiftedValue = (char) (memory.registers.get("A") << 1);
 		// Determine if the 9th bit is set.
 		boolean carry = (shiftedValue > 255) ? true : false;
 		// Set the carry flag accoringly.
@@ -40,7 +40,7 @@ public class ASL extends OpCode {
 			// Set the negative and zero flags accordingly
 			setNegativeZeroFlags(memory);
 			// Store the shifted value less the 9th bit in the accumulator
-			memory.registers.replace('A', (char) (shiftedValue & 255));
+			memory.registers.replace("A", shiftedValue & 255);
 		} else {
 			// Set negative flag accordingly
 			if ((shiftedValue & 128) > 0)

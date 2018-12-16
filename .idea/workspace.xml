@@ -1,42 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98cf8f60-1a26-4bb3-afe7-7b4c8a9f1970" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/CatalogueFullException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/DFSDisk$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/DFSDisk$BootOption.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/DFSDisk$DiskFormat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/DFSDisk$FreeSpaceFormat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/DFSDisk.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/DFSFile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/DiskFullException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Envelope.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/EnvelopeFile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/InvalidAddressException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/InvalidAddressModeException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/InvalidEnvelopeException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Memory$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Memory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCode$AddressMode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/AND.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/ui/EnvelopePitchEditorPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/ui/InvalidSliderRangeException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/ui/MultiSlider$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/ui/MultiSlider$ORIENTATION.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/ui/MultiSlider.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/ui/MultiSliderTab.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/ui/ValueChangeListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/ui/sprite/LogicalPalette.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/ui/sprite/Tile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/AND.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ASL.java" afterDir="false" />
+    <list default="true" id="98cf8f60-1a26-4bb3-afe7-7b4c8a9f1970" name="Default Changelist" comment="Changed memory address and register values to integers to allow for B+/Master models.&#10;Changes register keys to String to allow for PC register.&#10;Added BCC and BCS mnemonics">
+      <change afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/BCC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/BCS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Memory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Memory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Memory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Memory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCode$AddressMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCode$AddressMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/AND.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/AND.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BBIde/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Memory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/AND.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/AND.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ASL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ASL.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Memory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+            <state relative-caret-position="189">
+              <caret line="134" column="22" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="189">
+              <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/AND.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+            <state relative-caret-position="452">
+              <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#320#321#0" expanded="true" />
@@ -120,14 +99,40 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ASL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+            <state relative-caret-position="189">
+              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#357#358#0" expanded="true" />
-                <element signature="e#393#394#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/BCC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#335#336#0" expanded="true" />
+                <element signature="e#350#351#0" expanded="true" />
+                <element signature="e#386#387#0" expanded="true" />
+                <element signature="e#401#402#0" expanded="true" />
+                <element signature="e#429#430#0" expanded="true" />
+                <element signature="e#457#458#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/BCS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,6 +149,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Morgan Evans &lt;mooglestuff@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -152,19 +162,21 @@
         <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor.java" />
         <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/InvalidAddressModeException.java" />
         <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/InvalidAddressException.java" />
-        <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java" />
-        <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java" />
+        <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/BCC.java" />
+        <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/BCS.java" />
         <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/AND.java" />
         <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Memory.java" />
+        <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java" />
+        <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java" />
         <option value="$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ASL.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="1944" />
-    <option name="height" value="1044" />
+    <option name="x" value="2276" />
+    <option name="y" value="56" />
+    <option name="width" value="1296" />
+    <option name="height" value="696" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -224,7 +236,7 @@
               <item name="bridge" type="462c0819:PsiDirectoryNode" />
               <item name="Processor" type="462c0819:PsiDirectoryNode" />
               <item name="OpCodes" type="462c0819:PsiDirectoryNode" />
-              <item name="Mathematical" type="462c0819:PsiDirectoryNode" />
+              <item name="Logic" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -235,11 +247,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544910854747" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544950581558" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.plus.mevanspn.bridge.Processor.OpCodes.Logic" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.plus.mevanspn.bridge" />
     </key>
@@ -270,11 +285,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49023092" visible="true" weight="0.20161943" />
-      <window_info id="Structure" order="1" sideWeight="0.5097691" side_tool="true" visible="true" weight="0.20161943" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48626816" visible="true" weight="0.1369936" />
+      <window_info id="Structure" order="1" sideWeight="0.51373184" side_tool="true" visible="true" weight="0.1369936" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -290,7 +305,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -300,6 +315,10 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed memory address and register values to integers to allow for B+/Master models.&#10;Changes register keys to String to allow for PC register.&#10;Added BCC and BCS mnemonics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed memory address and register values to integers to allow for B+/Master models.&#10;Changes register keys to String to allow for PC register.&#10;Added BCC and BCS mnemonics" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor.java" />
@@ -317,20 +336,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/AND.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+        <state relative-caret-position="452">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#320#321#0" expanded="true" />
@@ -343,8 +352,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Memory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+        <state relative-caret-position="189">
+          <caret line="134" column="22" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/BCC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#457#458#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Logic/BCS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -353,8 +398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ADC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="189">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -363,14 +408,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/plus/mevanspn/bridge/Processor/OpCodes/Mathematical/ASL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+        <state relative-caret-position="189">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
           </folding>
         </state>
       </provider>

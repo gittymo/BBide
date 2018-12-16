@@ -10,7 +10,7 @@ public abstract class OpCode {
 	public abstract void perform(Memory memory)
 					throws InvalidAddressModeException, InvalidAddressException;
 	public void setNegativeZeroFlags(Memory memory) {
-		char currentAccumulator = memory.registers.get('A');
+		int currentAccumulator = memory.registers.get("A");
 		if (currentAccumulator > 127)
 			memory.flags.replace('N', Boolean.TRUE);
 		else
