@@ -7,12 +7,17 @@ import com.plus.mevanspn.bridge.Memory;
 public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
 
 	@Override
-	public int getASM() {
-		return 0;
+	public char[] getASM() {
+		return null;
 	}
 
 	@Override
 	public int getSize() {
+		return 0;
+	}
+
+	@Override
+	public int getBaseCycles() {
 		return 0;
 	}
 
@@ -35,7 +40,7 @@ public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
 		// Store the result back into the accumulator.
 		memory.registers.replace("A", result);
 		// Update the negative and zero flags accordingly.
-		setNegativeZeroFlags(memory);
+		memory.setNegativeZeroFlags();
 	}
 
 	private AddressMode addressMode;

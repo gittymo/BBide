@@ -10,12 +10,17 @@ import java.util.concurrent.atomic.DoubleAccumulator;
 public class ASL extends OpCode {
 
 	@Override
-	public int getASM() {
-		return 0;
+	public char[] getASM() {
+		return null;
 	}
 
 	@Override
 	public int getSize() {
+		return 0;
+	}
+
+	@Override
+	public int getBaseCycles() {
 		return 0;
 	}
 
@@ -38,7 +43,7 @@ public class ASL extends OpCode {
 		// Is the address mode Accumulator?
 		if (addressMode == AddressMode.Accumulator) {
 			// Set the negative and zero flags accordingly
-			setNegativeZeroFlags(memory);
+			memory.setNegativeZeroFlags();
 			// Store the shifted value less the 9th bit in the accumulator
 			memory.registers.replace("A", shiftedValue & 255);
 		} else {

@@ -6,13 +6,18 @@ import com.plus.mevanspn.bridge.Memory;
 
 public class ADC extends com.plus.mevanspn.bridge.Processor.OpCode {
 	@Override
-	public int getASM() {
-		return 0;
+	public char[] getASM() {
+		return null;
 	}
 
 	@Override
 	public int getSize() {
 		return addressMode.getSize();
+	}
+
+	@Override
+	public int getBaseCycles() {
+		return 0;
 	}
 
 	@Override
@@ -44,7 +49,7 @@ public class ADC extends com.plus.mevanspn.bridge.Processor.OpCode {
 		}
 
 		// Set the negative and zero flags appropriately.
-		setNegativeZeroFlags(memory);
+		memory.setNegativeZeroFlags();
 
 		// Store the total in the accumulator.
 		memory.registers.replace("A", total);

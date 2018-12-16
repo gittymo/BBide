@@ -122,6 +122,23 @@ public class Memory {
 		}
 	}
 
+	/**
+	 * Performs an update of the negative and zero flags.
+	 */
+	public void setNegativeZeroFlags() {
+		int currentAccumulator = registers.get("A");
+		if (currentAccumulator > 127)
+			flags.replace('N', Boolean.TRUE);
+		else
+			flags.replace('N', Boolean.FALSE);
+
+		if (currentAccumulator == 0)
+			flags.replace('Z', Boolean.TRUE);
+		else
+			flags.replace('Z', Boolean.FALSE);
+	}
+
+
 	private void initRegisters() {
 		registers = new HashMap<String, Integer>();
 		registers.clear();

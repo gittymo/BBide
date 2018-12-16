@@ -5,23 +5,36 @@ import com.plus.mevanspn.bridge.InvalidAddressModeException;
 import com.plus.mevanspn.bridge.Memory;
 
 public abstract class OpCode {
-	public abstract int getASM();
+	/**
+	 * Returns the assembler code for this instruction as an array of byte values
+	 * @return The assembler code including immediate values and addresses
+	 */
+	public abstract char[] getASM();
+
+	/**
+	 * Returns the size in bytes of the code for this instruction
+	 * @return Size of instruction in bytes (including immediate values and addresses)
+	 */
 	public abstract int getSize();
+
+	/**
+	 * Returns the base execution cycles for this instruction.  Some instructions will take longer depending upon whether
+	 * the instruction performs a branch or crosses a page boundary.
+	 * @return The minimum number of cycles required to perform this instruction.
+	 */
+	public abstract int getBaseCycles();
+
+	/**
+	 * Performs the purpose of the instruction on the given memory address.  If an invalid address or address mode is
+	 * given, this method will throw the appropriate exception.
+	 * @param memory The target memory object to perform the instruction on.
+	 * @throws InvalidAddressModeException
+	 * @throws InvalidAddressException
+	 */
 	public abstract void perform(Memory memory)
 					throws InvalidAddressModeException, InvalidAddressException;
-	public void setNegativeZeroFlags(Memory memory) {
-		int currentAccumulator = memory.registers.get("A");
-		if (currentAccumulator > 127)
-			memory.flags.replace('N', Boolean.TRUE);
-		else
-			memory.flags.replace('N', Boolean.FALSE);
 
-		if (currentAccumulator == 0)
-			memory.flags.replace('Z', Boolean.TRUE);
-		else
-			memory.flags.replace('Z', Boolean.FALSE);
 
-	}
 	public enum AddressMode {
 		Immediate(2,2),
 		ZeroPage(2,3),

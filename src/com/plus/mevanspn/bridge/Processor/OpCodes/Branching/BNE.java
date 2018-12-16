@@ -4,16 +4,26 @@ import com.plus.mevanspn.bridge.InvalidAddressException;
 import com.plus.mevanspn.bridge.InvalidAddressModeException;
 import com.plus.mevanspn.bridge.Memory;
 import com.plus.mevanspn.bridge.Processor.OpCode;
-
+/** The BNE class allows for the creation of BNE (Branch if Not Equal) mnemonic objects within a BBIDE pseudo program.
+ * The BNE mnemonic allows us to perform a relative branch - or jump - from the current execution address of the
+ * program if the zero flag is not set (0)  As a relative address this can be anything in the range of -128 to 127
+ * bytes from the current point of execution.  Branch commands only affect the position of the Program Counter.  No
+ * other register or flag is affected by a branching command.
+ */
 public class BNE extends OpCode {
 
 	@Override
-	public int getASM() {
-		return 0;
+	public char[] getASM() {
+		return null;
 	}
 
 	@Override
 	public int getSize() {
+		return 2;
+	}
+
+	@Override
+	public int getBaseCycles() {
 		return 0;
 	}
 
