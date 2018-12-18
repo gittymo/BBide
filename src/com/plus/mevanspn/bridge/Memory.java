@@ -146,6 +146,7 @@ public class Memory {
 		registers.put("X", 0); // X register
 		registers.put("Y", 0); // Y register
 		registers.put("PC", 0); // Program counter
+		registers.put("SP", 0x100); // Stack pointer
 	}
 
 	private void initFlags() {
@@ -169,5 +170,5 @@ public class Memory {
 	private Vector<OpCode> program;
 	public HashMap<String, Integer> registers;
 	public HashMap<Character, Boolean> flags;
-	private int[] memory;
+	public int[] memory;
 }
