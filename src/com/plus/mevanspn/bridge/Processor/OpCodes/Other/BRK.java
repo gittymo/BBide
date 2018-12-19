@@ -20,7 +20,7 @@ public class BRK extends OpCode {
 
 	@Override
 	public int getSize() {
-		return (addressMode == AddressMode.Absolute) ? 3 : 2;
+		return 1;
 	}
 
 	@Override
