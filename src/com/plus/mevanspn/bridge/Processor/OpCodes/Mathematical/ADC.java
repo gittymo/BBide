@@ -3,6 +3,7 @@ package com.plus.mevanspn.bridge.Processor.OpCodes.Mathematical;
 import com.plus.mevanspn.bridge.InvalidAddressException;
 import com.plus.mevanspn.bridge.InvalidAddressModeException;
 import com.plus.mevanspn.bridge.Memory;
+import com.plus.mevanspn.bridge.MemoryMissingException;
 
 public class ADC extends com.plus.mevanspn.bridge.Processor.OpCode {
 	@Override
@@ -22,12 +23,13 @@ public class ADC extends com.plus.mevanspn.bridge.Processor.OpCode {
 
 	@Override
 	public void perform(Memory memory)
-					throws InvalidAddressException, InvalidAddressModeException
+					throws InvalidAddressException, InvalidAddressModeException, MemoryMissingException
 	{
 		// We don't allow direct access to the accumulator with this opcode, so throw an exception.
 		if (addressMode == AddressMode.Accumulator)
 			throw new InvalidAddressModeException();
-
+		// Make sure we've got a valid memory object
+		if (memory == null) throw new MemoryMissingException();
 		// Get the value from the accumulator.
 		int accumulator = memory.registers.get("A");
 		// Get the value from the memory location given.

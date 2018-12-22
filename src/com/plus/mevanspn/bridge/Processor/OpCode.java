@@ -3,6 +3,7 @@ package com.plus.mevanspn.bridge.Processor;
 import com.plus.mevanspn.bridge.InvalidAddressException;
 import com.plus.mevanspn.bridge.InvalidAddressModeException;
 import com.plus.mevanspn.bridge.Memory;
+import com.plus.mevanspn.bridge.MemoryMissingException;
 
 public abstract class OpCode {
 	/**
@@ -32,7 +33,7 @@ public abstract class OpCode {
 	 * @throws InvalidAddressException
 	 */
 	public abstract void perform(Memory memory)
-					throws InvalidAddressModeException, InvalidAddressException;
+					throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException;
 
 
 	public enum AddressMode {

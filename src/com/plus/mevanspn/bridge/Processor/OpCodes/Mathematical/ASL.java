@@ -3,9 +3,8 @@ package com.plus.mevanspn.bridge.Processor.OpCodes.Mathematical;
 import com.plus.mevanspn.bridge.InvalidAddressException;
 import com.plus.mevanspn.bridge.InvalidAddressModeException;
 import com.plus.mevanspn.bridge.Memory;
+import com.plus.mevanspn.bridge.MemoryMissingException;
 import com.plus.mevanspn.bridge.Processor.OpCode;
-
-import java.util.concurrent.atomic.DoubleAccumulator;
 
 public class ASL extends OpCode {
 
@@ -30,7 +29,11 @@ public class ASL extends OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException {
+	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException,
+		MemoryMissingException
+	{
+		// Make sure we've got a valid memory object
+		if (memory == null) throw new MemoryMissingException();
 		// Get the base value
 		int baseValue = (addressMode == AddressMode.Accumulator) ?
 						memory.registers.get("A") : memory.getValueAt(address, addressMode);
