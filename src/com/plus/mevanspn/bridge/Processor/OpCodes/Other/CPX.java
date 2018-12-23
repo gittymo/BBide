@@ -6,19 +6,19 @@ import com.plus.mevanspn.bridge.MemoryMissingException;
 import com.plus.mevanspn.bridge.Memory;
 import com.plus.mevanspn.bridge.Processor.OpCode;
 
-/** THe CMP class is used to create objects representing the CMP assembler mnemonic in
+/** THe CPX class is used to create objects representing the CPX assembler mnemonic in
  * BBide programs.  The purpose of this mnemonic is to compare the contents of the
- * Accumulator with the value at a given address in memory (or if immediate addressing
+ * X register with the value at a given address in memory (or if immediate addressing
  * is used, the value itself that is given) by substracting the memory value from the
- * accumulator. Depening on the result, the following flags
+ * register. Depening on the result, the following flags
  * are set:
- * (Z)ero if Accumulator equals the value in memory
+ * (Z)ero if X register equals the value in memory
  * (N)egative if bit 7 is set in the result
- * (C)arry if Accumulator is greater than value in memory.
+ * (C)arry if X register is greater than value in memory.
  * 
- * The value of the accumulator is preserved after the operation and no other flags are 
- * affected. */
-public class CMP extends OpCode {
+ * The value of the X register and the memory location are preserved after the operation 
+ * and no other flags are affected. */
+public class CPX extends OpCode {
 	@Override
 	public char[] getASM() {
 		return new char[0];
@@ -29,13 +29,8 @@ public class CMP extends OpCode {
 		if (addressMode == null) return 0;
 		switch (addressMode) {
 			case Immediate :
-			case ZeroPage:
-			case ZeroPageX:
-			case PreIndirectX:
-			case PostIndirectY: return 2;
-			case Absolute:
-			case AbsoluteX:
-			case AbsoluteY: return 3;
+			case ZeroPage: return 2;
+			case Absolute: return 3;
 			default: return 0;
 		}
 	}
@@ -46,17 +41,12 @@ public class CMP extends OpCode {
 		switch (addressMode) {
 			case Immediate : return 2;
 			case ZeroPage : return 3;
-			case ZeroPageX :
-			case Absolute :
-			case AbsoluteX :
-			case AbsoluteY : return 4;
-			case PreIndirectX : return 6;
-			case PostIndirectY : return 5;
+			case Absolute : return 4;
 			default : return 0;
 		}
 	}
 
-	public CMP(int addressOrValue, AddressMode addressMode) {
+	public CPX(int addressOrValue, AddressMode addressMode) {
 		this.addressOrValue = addressOrValue;
 		this.addressMode = addressMode;
 	}
@@ -85,14 +75,9 @@ public class CMP extends OpCode {
 		// Get comparison result (A - value (or value at memory address))
 		int result;
 		switch (addressMode) {
-			case Immediate : result = memory.registers.get("A") - addressOrValue; break;
+			case Immediate : result = memory.registers.get("X") - addressOrValue; break;
 			case ZeroPage:
-			case ZeroPageX:
-			case Absolute:
-			case AbsoluteX:
-			case AbsoluteY:
-			case PreIndirectX:
-			case PostIndirectY: result = memory.registers.get("A") - 
+			case Absolute: result = memory.registers.get("X") - 
 				memory.getValueAt(addressOrValue, addressMode); break;
 			default: throw new InvalidAddressModeException();
 		}

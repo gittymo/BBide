@@ -34,7 +34,7 @@ public class BRK extends OpCode {
 		MemoryMissingException
 	{
 		// Make sure we've got a valid memory object
-		if (memory == null) throw new MemoryMissingException(); {
+		if (memory == null) throw new MemoryMissingException();
 		// Set break flag
 		memory.flags.replace('B', true);
 		// Get the index of the stack pointer

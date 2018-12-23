@@ -3,6 +3,7 @@ package com.plus.mevanspn.bridge.Processor.OpCodes.Logic;
 import com.plus.mevanspn.bridge.InvalidAddressException;
 import com.plus.mevanspn.bridge.InvalidAddressModeException;
 import com.plus.mevanspn.bridge.Memory;
+import com.plus.mevanspn.bridge.MemoryMissingException;
 
 public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
 
@@ -27,7 +28,9 @@ public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException {
+	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException {
+		// Make sure we've got a valid memory object
+		if (memory == null) throw new MemoryMissingException();
 		// We don't allow direct access to the accumulator with this opcode, so throw an exception.
 		if (addressMode == AddressMode.Accumulator)
 			throw new InvalidAddressModeException();
