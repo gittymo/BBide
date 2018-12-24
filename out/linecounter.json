@@ -646,6 +646,1223 @@
                     "filename": "src\\com\\plus\\mevanspn\\ui\\ValueChangeListener.java"
                 }
             ]
+        },
+        {
+            "version": "0.2.2",
+            "counttime": "2018-12-24 09:32:51",
+            "filesum": 95,
+            "codesum": 4020,
+            "commentsum": 626,
+            "blanksum": 288,
+            "statistics": {
+                "": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".xml": {
+                    "code": 2447,
+                    "comment": 206,
+                    "blank": 0
+                },
+                ".mf": {
+                    "code": 2,
+                    "comment": 0,
+                    "blank": 1
+                },
+                ".iml": {
+                    "code": 11,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".properties": {
+                    "code": 95,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".java": {
+                    "code": 1464,
+                    "comment": 420,
+                    "blank": 287
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": ".idea\\codeStyles\\codeStyleConfig.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": ".idea\\encodings.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".idea\\misc.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": ".idea\\modules.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 124,
+                    "comment": 0,
+                    "filename": ".idea\\uiDesigner.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".idea\\vcs.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 650,
+                    "comment": 0,
+                    "filename": ".idea\\workspace.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "BBIDE.iml"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 68,
+                    "filename": "build.xml"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "manifest.mf"
+                },
+                {
+                    "blank": 0,
+                    "code": 1616,
+                    "comment": 138,
+                    "filename": "nbproject\\build-impl.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "nbproject\\genfiles.properties"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "nbproject\\private\\private.properties"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "nbproject\\private\\private.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 86,
+                    "comment": 0,
+                    "filename": "nbproject\\project.properties"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "nbproject\\project.xml"
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\CatalogueFullException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSDisk$1.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSDisk$BootOption.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSDisk$DiskFormat.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSDisk$FreeSpaceFormat.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSDisk.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSFile.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DiskFullException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Envelope.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\EnvelopeFile.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\InvalidAddressException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\InvalidAddressModeException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\InvalidEnvelopeException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Memory$1.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Memory.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCode$AddressMode.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCode.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BCC.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BCS.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BEQ.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BMI.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BNE.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BPL.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BVC.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BVS.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Logic\\AND.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Mathematical\\ADC.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Mathematical\\ASL.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\Main.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\EnvelopePitchEditorPanel.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\InvalidSliderRangeException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\MultiSlider$1.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\MultiSlider$ORIENTATION.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\MultiSlider.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\MultiSliderTab.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\sprite\\LogicalPalette.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\sprite\\Tile.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\ValueChangeListener.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\CatalogueFullException.java"
+                },
+                {
+                    "blank": 17,
+                    "code": 138,
+                    "comment": 28,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\DFSDisk.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 17,
+                    "comment": 16,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\DFSFile.java"
+                },
+                {
+                    "blank": 3,
+                    "code": 5,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\DiskFullException.java"
+                },
+                {
+                    "blank": 4,
+                    "code": 33,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Envelope.java"
+                },
+                {
+                    "blank": 19,
+                    "code": 64,
+                    "comment": 23,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\EnvelopeFile.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\InvalidAddressException.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\InvalidAddressModeException.java"
+                },
+                {
+                    "blank": 3,
+                    "code": 5,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\InvalidEnvelopeException.java"
+                },
+                {
+                    "blank": 21,
+                    "code": 146,
+                    "comment": 19,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Memory.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\MemoryMissingException.java"
+                },
+                {
+                    "blank": 9,
+                    "code": 31,
+                    "comment": 20,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCode.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BCC.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BCS.java"
+                },
+                {
+                    "blank": 7,
+                    "code": 29,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BEQ.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 10,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BMI.java"
+                },
+                {
+                    "blank": 7,
+                    "code": 29,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BNE.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 10,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BPL.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 10,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BVC.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BVS.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 36,
+                    "comment": 7,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Logic\\AND.java"
+                },
+                {
+                    "blank": 10,
+                    "code": 47,
+                    "comment": 12,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Mathematical\\ADC.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 51,
+                    "comment": 11,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Mathematical\\ASL.java"
+                },
+                {
+                    "blank": 11,
+                    "code": 63,
+                    "comment": 10,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Mathematical\\DEC.java"
+                },
+                {
+                    "blank": 7,
+                    "code": 40,
+                    "comment": 14,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\BIT.java"
+                },
+                {
+                    "blank": 7,
+                    "code": 48,
+                    "comment": 14,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\BRK.java"
+                },
+                {
+                    "blank": 5,
+                    "code": 25,
+                    "comment": 7,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CLC.java"
+                },
+                {
+                    "blank": 5,
+                    "code": 25,
+                    "comment": 6,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CLD.java"
+                },
+                {
+                    "blank": 5,
+                    "code": 25,
+                    "comment": 7,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CLI.java"
+                },
+                {
+                    "blank": 5,
+                    "code": 25,
+                    "comment": 6,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CLV.java"
+                },
+                {
+                    "blank": 10,
+                    "code": 81,
+                    "comment": 15,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CMP.java"
+                },
+                {
+                    "blank": 10,
+                    "code": 66,
+                    "comment": 15,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CPX.java"
+                },
+                {
+                    "blank": 10,
+                    "code": 66,
+                    "comment": 15,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CPY.java"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 1,
+                    "filename": "src\\com\\plus\\mevanspn\\Main.java"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\EnvelopePitchEditorPanel.java"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\InvalidSliderRangeException.java"
+                },
+                {
+                    "blank": 25,
+                    "code": 118,
+                    "comment": 17,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\MultiSlider.java"
+                },
+                {
+                    "blank": 6,
+                    "code": 26,
+                    "comment": 10,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\sprite\\LogicalPalette.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\sprite\\Tile.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\ValueChangeListener.java"
+                }
+            ]
+        },
+        {
+            "version": "0.2.2",
+            "counttime": "2018-12-24 09:33:57",
+            "filesum": 82,
+            "codesum": 1483,
+            "commentsum": 488,
+            "blanksum": 288,
+            "statistics": {
+                ".xml": {
+                    "code": 5,
+                    "comment": 68,
+                    "blank": 0
+                },
+                "": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".mf": {
+                    "code": 2,
+                    "comment": 0,
+                    "blank": 1
+                },
+                ".java": {
+                    "code": 1464,
+                    "comment": 420,
+                    "blank": 287
+                },
+                ".iml": {
+                    "code": 11,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "BBIDE.iml"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 68,
+                    "filename": "build.xml"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "manifest.mf"
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\CatalogueFullException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSDisk$1.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSDisk$BootOption.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSDisk$DiskFormat.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSDisk$FreeSpaceFormat.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSDisk.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DFSFile.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\DiskFullException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Envelope.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\EnvelopeFile.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\InvalidAddressException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\InvalidAddressModeException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\InvalidEnvelopeException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Memory$1.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Memory.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCode$AddressMode.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCode.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BCC.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BCS.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BEQ.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BMI.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BNE.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BPL.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BVC.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BVS.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Logic\\AND.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Mathematical\\ADC.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Mathematical\\ASL.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\Main.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\EnvelopePitchEditorPanel.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\InvalidSliderRangeException.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\MultiSlider$1.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\MultiSlider$ORIENTATION.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\MultiSlider.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\MultiSliderTab.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\sprite\\LogicalPalette.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\sprite\\Tile.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "out\\production\\BBIde\\com\\plus\\mevanspn\\ui\\ValueChangeListener.class",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\CatalogueFullException.java"
+                },
+                {
+                    "blank": 17,
+                    "code": 138,
+                    "comment": 28,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\DFSDisk.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 17,
+                    "comment": 16,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\DFSFile.java"
+                },
+                {
+                    "blank": 3,
+                    "code": 5,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\DiskFullException.java"
+                },
+                {
+                    "blank": 4,
+                    "code": 33,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Envelope.java"
+                },
+                {
+                    "blank": 19,
+                    "code": 64,
+                    "comment": 23,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\EnvelopeFile.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\InvalidAddressException.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\InvalidAddressModeException.java"
+                },
+                {
+                    "blank": 3,
+                    "code": 5,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\InvalidEnvelopeException.java"
+                },
+                {
+                    "blank": 21,
+                    "code": 146,
+                    "comment": 19,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Memory.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\MemoryMissingException.java"
+                },
+                {
+                    "blank": 9,
+                    "code": 31,
+                    "comment": 20,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCode.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BCC.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BCS.java"
+                },
+                {
+                    "blank": 7,
+                    "code": 29,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BEQ.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 10,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BMI.java"
+                },
+                {
+                    "blank": 7,
+                    "code": 29,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BNE.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 10,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BPL.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 10,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BVC.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Branching\\BVS.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 36,
+                    "comment": 7,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Logic\\AND.java"
+                },
+                {
+                    "blank": 10,
+                    "code": 47,
+                    "comment": 12,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Mathematical\\ADC.java"
+                },
+                {
+                    "blank": 8,
+                    "code": 51,
+                    "comment": 11,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Mathematical\\ASL.java"
+                },
+                {
+                    "blank": 11,
+                    "code": 63,
+                    "comment": 10,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Mathematical\\DEC.java"
+                },
+                {
+                    "blank": 7,
+                    "code": 40,
+                    "comment": 14,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\BIT.java"
+                },
+                {
+                    "blank": 7,
+                    "code": 48,
+                    "comment": 14,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\BRK.java"
+                },
+                {
+                    "blank": 5,
+                    "code": 25,
+                    "comment": 7,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CLC.java"
+                },
+                {
+                    "blank": 5,
+                    "code": 25,
+                    "comment": 6,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CLD.java"
+                },
+                {
+                    "blank": 5,
+                    "code": 25,
+                    "comment": 7,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CLI.java"
+                },
+                {
+                    "blank": 5,
+                    "code": 25,
+                    "comment": 6,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CLV.java"
+                },
+                {
+                    "blank": 10,
+                    "code": 81,
+                    "comment": 15,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CMP.java"
+                },
+                {
+                    "blank": 10,
+                    "code": 66,
+                    "comment": 15,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CPX.java"
+                },
+                {
+                    "blank": 10,
+                    "code": 66,
+                    "comment": 15,
+                    "filename": "src\\com\\plus\\mevanspn\\bridge\\Processor\\OpCodes\\Other\\CPY.java"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 1,
+                    "filename": "src\\com\\plus\\mevanspn\\Main.java"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\EnvelopePitchEditorPanel.java"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\InvalidSliderRangeException.java"
+                },
+                {
+                    "blank": 25,
+                    "code": 118,
+                    "comment": 17,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\MultiSlider.java"
+                },
+                {
+                    "blank": 6,
+                    "code": 26,
+                    "comment": 10,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\sprite\\LogicalPalette.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\sprite\\Tile.java"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 9,
+                    "filename": "src\\com\\plus\\mevanspn\\ui\\ValueChangeListener.java"
+                }
+            ]
         }
     ]
 }
