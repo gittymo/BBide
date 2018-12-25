@@ -1,1 +1,5 @@
 /nbproject/private/
+/out
+BBIDE.iml
+build.xml
+manifest.mf

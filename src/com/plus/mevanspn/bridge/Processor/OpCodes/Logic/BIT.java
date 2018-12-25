@@ -1,4 +1,4 @@
-package com.plus.mevanspn.bridge.Processor.OpCodes.Other;
+package com.plus.mevanspn.bridge.Processor.OpCodes.Logic;
 
 import com.plus.mevanspn.bridge.InvalidAddressException;
 import com.plus.mevanspn.bridge.InvalidAddressModeException;
@@ -11,7 +11,8 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
  * contents of the accumulator against a the contents of a memory location.  If the bits
  * match then the zero flag is unset (0) otherwise if the bits are different the zero flag
  * is set (1)  THe (N)egative flag's contents are set to the 7th bit value of the memory area
- * and the (M)minus flag contains the 6th bit value of the memory area.
+ * and the (M)inus flag contains the 6th bit value of the memory area.
+ * The results of the AND operation are not stored in the Accumulator.
  */
 public class BIT extends OpCode {
 	@Override

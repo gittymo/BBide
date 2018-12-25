@@ -5,14 +5,14 @@ import com.plus.mevanspn.bridge.InvalidAddressModeException;
 import com.plus.mevanspn.bridge.Memory;
 import com.plus.mevanspn.bridge.MemoryMissingException;
 
-/** A logical AND is performed bit by bit on the Accumulator using a location in memory, leaving
+/** A logical EOR is performed bit by bit on the Accumulator using a location in memory, leaving
  * the result in the Accumulator.
  * The following flags can be affected:
  * (Z)ero set if Accumulator = 0
  * (N)egative set if bit 7 of Accumulator is set.
  * No other flags are affected.
  */
-public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
+public class EOR extends com.plus.mevanspn.bridge.Processor.OpCode {
 
 	@Override
 	public char[] getASM() {
@@ -21,15 +21,35 @@ public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
 
 	@Override
 	public int getSize() {
-		return 0;
+		switch (addressMode) {
+			case Immediate:
+			case ZeroPage:
+			case ZeroPageX:
+			case PreIndirectX:
+			case PostIndirectY: return 2;
+			case Absolute:
+			case AbsoluteX:
+			case AbsoluteY: return 3;
+			default: return 0;
+		}
 	}
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
-	}
+		switch (addressMode) {
+			case Immediate: return 2;
+			case ZeroPage: return 3;
+			case ZeroPageX:
+			case Absolute:
+			case AbsoluteX:
+			case AbsoluteY: return 4;
+			case PreIndirectX: return 5;
+			case PostIndirectY: return 6;
+			default: return 0;
+		}
+	}	
 
-	public AND(AddressMode addressMode, int address) {
+	public EOR(AddressMode addressMode, int address) {
 		this.addressMode = addressMode;
 		this.address = address;
 	}
@@ -45,8 +65,8 @@ public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
 		int accumulator = memory.registers.get("A");
 		// Get the value stored in the given memory location
 		int mem = memory.getValueAt(address, addressMode);
-		// AND the two together
-		int result = (char) (mem & accumulator);
+		// EOR the two together
+		int result = (char) (mem ^ accumulator);
 		// Store the result back into the accumulator.
 		memory.registers.replace("A", result);
 		// Update the negative and zero flags accordingly.
