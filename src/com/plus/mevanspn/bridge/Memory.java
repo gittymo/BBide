@@ -30,7 +30,7 @@ public class Memory {
 						addressMode != OpCode.AddressMode.AbsoluteY
 				)) throw new InvalidAddressException();
 		switch (addressMode) {
-			case Immediate: throw new InvalidAddressModeException();
+			case Immediate: return offset;
 			case ZeroPage: return memory[offset];
 			case ZeroPageX: return memory[offset + registers.get("X")];
 			case Absolute: return memory[offset];
@@ -63,6 +63,11 @@ public class Memory {
 			}
 			case Accumulator: {
 				return registers.get("A");
+			}
+			case Indirect : {
+				int indirectAddress =
+								(memory[offset] & 255) + ((memory[offset + 1] & 255) << 8);
+				return indirectAddress;
 			}
 			default: throw new InvalidAddressException();
 		}

@@ -439,3 +439,112 @@ src\com\plus\mevanspn\ui\sprite\LogicalPalette.java, code is 26, comment is 10, 
 src\com\plus\mevanspn\ui\sprite\Tile.java, code is 5, comment is 9, blank is 1.
 src\com\plus\mevanspn\ui\ValueChangeListener.java, code is 5, comment is 9, blank is 1.
 ===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.2
+-------------------------------------------------------------------------------
+count time : 2018-12-25 06:34:05
+count workspace : c:\Users\win10\Desktop\BBide
+total files : 88
+total code lines : 1750
+total comment lines : 564
+total blank lines : 344
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              5|              0|              0|   0.29|
+   |            .mf|              2|              0|              1|   0.11|
+   |           .xml|              5|             68|              0|   0.29|
+   |          .java|           1727|            496|            343|     99|
+   |           .iml|             11|              0|              0|   0.63|
+   -------------------------------------------------------------------------
+.gitignore, code is 5, comment is 0, blank is 0.
+BBIDE.iml, code is 11, comment is 0, blank is 0.
+build.xml, code is 5, comment is 68, blank is 0.
+manifest.mf, code is 2, comment is 0, blank is 1.
+out\production\BBIde\com\plus\mevanspn\bridge\CatalogueFullException.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\DFSDisk$1.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\DFSDisk$BootOption.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\DFSDisk$DiskFormat.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\DFSDisk$FreeSpaceFormat.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\DFSDisk.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\DFSFile.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\DiskFullException.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Envelope.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\EnvelopeFile.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\InvalidAddressException.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\InvalidAddressModeException.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\InvalidEnvelopeException.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Memory$1.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Memory.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCode$AddressMode.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCode.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BCC.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BCS.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BEQ.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BMI.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BNE.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BPL.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BVC.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BVS.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Logic\AND.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Mathematical\ADC.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\bridge\Processor\OpCodes\Mathematical\ASL.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\Main.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\ui\EnvelopePitchEditorPanel.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\ui\InvalidSliderRangeException.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\ui\MultiSlider$1.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\ui\MultiSlider$ORIENTATION.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\ui\MultiSlider.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\ui\MultiSliderTab.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\ui\sprite\LogicalPalette.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\ui\sprite\Tile.class, it is a binary file.
+out\production\BBIde\com\plus\mevanspn\ui\ValueChangeListener.class, it is a binary file.
+src\com\plus\mevanspn\bridge\CatalogueFullException.java, code is 5, comment is 9, blank is 2.
+src\com\plus\mevanspn\bridge\DFSDisk.java, code is 138, comment is 28, blank is 17.
+src\com\plus\mevanspn\bridge\DFSFile.java, code is 17, comment is 16, blank is 1.
+src\com\plus\mevanspn\bridge\DiskFullException.java, code is 5, comment is 9, blank is 3.
+src\com\plus\mevanspn\bridge\Envelope.java, code is 33, comment is 9, blank is 4.
+src\com\plus\mevanspn\bridge\EnvelopeFile.java, code is 64, comment is 23, blank is 19.
+src\com\plus\mevanspn\bridge\InvalidAddressException.java, code is 3, comment is 0, blank is 1.
+src\com\plus\mevanspn\bridge\InvalidAddressModeException.java, code is 3, comment is 0, blank is 1.
+src\com\plus\mevanspn\bridge\InvalidEnvelopeException.java, code is 5, comment is 9, blank is 3.
+src\com\plus\mevanspn\bridge\Memory.java, code is 146, comment is 19, blank is 21.
+src\com\plus\mevanspn\bridge\MemoryMissingException.java, code is 4, comment is 0, blank is 1.
+src\com\plus\mevanspn\bridge\Processor\OpCode.java, code is 31, comment is 20, blank is 9.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BCC.java, code is 29, comment is 9, blank is 8.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BCS.java, code is 29, comment is 9, blank is 8.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BEQ.java, code is 29, comment is 9, blank is 7.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BMI.java, code is 29, comment is 10, blank is 8.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BNE.java, code is 29, comment is 9, blank is 7.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BPL.java, code is 29, comment is 10, blank is 8.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BVC.java, code is 29, comment is 10, blank is 8.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Branching\BVS.java, code is 29, comment is 9, blank is 8.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Logic\AND.java, code is 36, comment is 14, blank is 8.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Logic\BIT.java, code is 40, comment is 15, blank is 7.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Logic\EOR.java, code is 56, comment is 14, blank is 8.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Mathematical\ADC.java, code is 47, comment is 12, blank is 10.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Mathematical\ASL.java, code is 51, comment is 11, blank is 8.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Mathematical\DEC.java, code is 63, comment is 10, blank is 11.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Mathematical\DEX.java, code is 36, comment is 10, blank is 9.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Mathematical\DEY.java, code is 36, comment is 10, blank is 9.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Mathematical\INC.java, code is 63, comment is 12, blank is 12.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Mathematical\INX.java, code is 36, comment is 11, blank is 9.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Mathematical\INY.java, code is 36, comment is 11, blank is 9.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Other\BRK.java, code is 48, comment is 14, blank is 7.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Other\CLC.java, code is 25, comment is 7, blank is 5.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Other\CLD.java, code is 25, comment is 6, blank is 5.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Other\CLI.java, code is 25, comment is 7, blank is 5.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Other\CLV.java, code is 25, comment is 6, blank is 5.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Other\CMP.java, code is 81, comment is 15, blank is 10.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Other\CPX.java, code is 66, comment is 15, blank is 10.
+src\com\plus\mevanspn\bridge\Processor\OpCodes\Other\CPY.java, code is 66, comment is 15, blank is 10.
+src\com\plus\mevanspn\Main.java, code is 5, comment is 1, blank is 2.
+src\com\plus\mevanspn\ui\EnvelopePitchEditorPanel.java, code is 18, comment is 9, blank is 5.
+src\com\plus\mevanspn\ui\InvalidSliderRangeException.java, code is 3, comment is 9, blank is 2.
+src\com\plus\mevanspn\ui\MultiSlider.java, code is 118, comment is 17, blank is 25.
+src\com\plus\mevanspn\ui\sprite\LogicalPalette.java, code is 26, comment is 10, blank is 6.
+src\com\plus\mevanspn\ui\sprite\Tile.java, code is 5, comment is 9, blank is 1.
+src\com\plus\mevanspn\ui\ValueChangeListener.java, code is 5, comment is 9, blank is 1.
+===============================================================================
