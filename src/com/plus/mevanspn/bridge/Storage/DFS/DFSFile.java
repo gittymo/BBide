@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.plus.mevanspn.bridge;
+package com.plus.mevanspn.bridge.Storage.DFS;
 
 /**
  * A class that implements the DFSFile interface must provide the basic methods 

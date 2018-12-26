@@ -1,8 +1,6 @@
 package com.plus.mevanspn.bridge.Processor.OpCodes.Branching;
 
-import com.plus.mevanspn.bridge.InvalidAddressException;
-import com.plus.mevanspn.bridge.InvalidAddressModeException;
-import com.plus.mevanspn.bridge.Memory;
+import com.plus.mevanspn.bridge.Storage.RAM.*;
 import com.plus.mevanspn.bridge.Processor.OpCode;
 
 /** The BMI class allows for the creation of BMI (Branch if MInus) mnemonic objects within a

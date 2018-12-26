@@ -1,8 +1,6 @@
 package com.plus.mevanspn.bridge.Processor.OpCodes.Branching;
 
-import com.plus.mevanspn.bridge.InvalidAddressException;
-import com.plus.mevanspn.bridge.InvalidAddressModeException;
-import com.plus.mevanspn.bridge.Memory;
+import com.plus.mevanspn.bridge.Storage.RAM.*;
 import com.plus.mevanspn.bridge.Processor.OpCode;
 /** The BEQ class allows for the creation of BCS (Branch if EQual) mnemonic objects within a BBIDE pseudo program.
  * The BEQ mnemonic allows us to perform a relative branch - or jump - from the current execution address of the

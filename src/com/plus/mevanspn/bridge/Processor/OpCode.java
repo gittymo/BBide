@@ -1,9 +1,10 @@
 package com.plus.mevanspn.bridge.Processor;
 
-import com.plus.mevanspn.bridge.InvalidAddressException;
-import com.plus.mevanspn.bridge.InvalidAddressModeException;
-import com.plus.mevanspn.bridge.Memory;
-import com.plus.mevanspn.bridge.MemoryMissingException;
+import com.plus.mevanspn.bridge.Storage.RAM.InvalidAddressException;
+import com.plus.mevanspn.bridge.Storage.RAM.InvalidAddressModeException;
+import com.plus.mevanspn.bridge.Storage.RAM.Memory;
+import com.plus.mevanspn.bridge.Storage.RAM.MemoryMissingException;
+import com.plus.mevanspn.bridge.Storage.RAM.StackOverflowException;
 
 public abstract class OpCode {
 	/**
@@ -31,10 +32,12 @@ public abstract class OpCode {
 	 * @param memory The target memory object to perform the instruction on.
 	 * @throws InvalidAddressModeException
 	 * @throws InvalidAddressException
+	 * @throws MemoryMissingException
+	 * @throws StackOverflowException
 	 */
 	public abstract void perform(Memory memory)
-					throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException;
-
+					throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException,
+					StackOverflowException;
 
 	public enum AddressMode {
 		Immediate(2,2),

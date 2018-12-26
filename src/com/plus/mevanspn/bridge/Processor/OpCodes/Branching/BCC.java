@@ -1,8 +1,7 @@
 package com.plus.mevanspn.bridge.Processor.OpCodes.Branching;
 
-import com.plus.mevanspn.bridge.InvalidAddressException;
-import com.plus.mevanspn.bridge.InvalidAddressModeException;
-import com.plus.mevanspn.bridge.Memory;
+import com.plus.mevanspn.bridge.Storage.RAM.*;
+
 import com.plus.mevanspn.bridge.Processor.OpCode;
 
 /** The BCC class allows for the creation of BCC (Branch if Carry Clear) mnemonic objects within a BBIDE pseudo program.

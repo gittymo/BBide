@@ -2,15 +2,16 @@ package com.plus.mevanspn.bridge.Processor.OpCodes.Branching;
 
 import com.plus.mevanspn.bridge.Storage.RAM.*;
 import com.plus.mevanspn.bridge.Processor.OpCode;
-/** The JMP class allows for the creation of JMP (JuMP to new location) mnemonic objects within a 
+/** The JSR class allows for the creation of JSR (Jump to SubRoutine) mnemonic objects within a 
  * BBIDE pseudo program.
- * The JMP mnemonic is the equivalent to the GOTO statement of a BASIC program in that it allows 
- * us to move the current address of execution to an abitrary location in memory.
- * THe address can be given as am absolute address, or an indrect address.
+ * The JSR mnemonic is the equivalent to the FN statement of a BASIC program in that it allows 
+ * us to move the current address of execution to an abitrary location in memory and continue 
+ * execution from there.  The program counter prior to the jump is stored on the stack so that we 
+ * can return to the original point of execution after that subroutine has finished.
  * Branch commands only affect the position of the Program Counter.  No other register or flag 
  * is affected by a branching command.
  */
-public class JMP extends OpCode {
+public class JSR extends OpCode {
 
 	@Override
 	public char[] getASM() {
@@ -21,7 +22,6 @@ public class JMP extends OpCode {
 	public int getSize() {
 		switch (addressMode) {
 			case Absolute: return 3;
-			case Indirect: return 3;
 			default: return 0;
 		}
 	}
@@ -29,23 +29,25 @@ public class JMP extends OpCode {
 	@Override
 	public int getBaseCycles() {
 		switch (addressMode) {
-			case Absolute: return 3;
-			case Indirect: return 5;
+			case Absolute: return 6;
 			default: return 0;
 		}
 	}
 
-	public JMP(int address, AddressMode addressMode) {
+	public JSR(int address, AddressMode addressMode) {
 		this.address = address;
 		this.addressMode = addressMode;
 	}
 
 	@Override
 	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException,
-		MemoryMissingException
+		MemoryMissingException, StackOverflowException
 	{
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
+		// Get and push the program counter onto the stack
+		int pc = memory.registers.get("PC");
+		memory.stack.push(pc);
 		// Get the new program counter address
 		int newPCAddress = memory.getValueAt(address, addressMode);
 		// Move the program counter to new address.

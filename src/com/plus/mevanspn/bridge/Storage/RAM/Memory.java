@@ -1,4 +1,4 @@
-package com.plus.mevanspn.bridge;
+package com.plus.mevanspn.bridge.Storage.RAM;
 
 import java.util.HashMap;
 import java.util.Vector;
@@ -170,10 +170,12 @@ public class Memory {
 		memory = new int[32768];
 		for (int i = 0; i < 32768; i++)
 			memory[i] = 0;
+		stack = new Stack(this);
 	}
 
 	private Vector<OpCode> program;
 	public HashMap<String, Integer> registers;
 	public HashMap<Character, Boolean> flags;
 	public int[] memory;
+	public Stack stack;
 }

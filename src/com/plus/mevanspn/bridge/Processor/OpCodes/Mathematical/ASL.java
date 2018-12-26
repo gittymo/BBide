@@ -1,9 +1,6 @@
 package com.plus.mevanspn.bridge.Processor.OpCodes.Mathematical;
 
-import com.plus.mevanspn.bridge.InvalidAddressException;
-import com.plus.mevanspn.bridge.InvalidAddressModeException;
-import com.plus.mevanspn.bridge.Memory;
-import com.plus.mevanspn.bridge.MemoryMissingException;
+import com.plus.mevanspn.bridge.Storage.RAM.*;
 import com.plus.mevanspn.bridge.Processor.OpCode;
 
 public class ASL extends OpCode {

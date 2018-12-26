@@ -1,9 +1,6 @@
 package com.plus.mevanspn.bridge.Processor.OpCodes.Logic;
 
-import com.plus.mevanspn.bridge.InvalidAddressException;
-import com.plus.mevanspn.bridge.InvalidAddressModeException;
-import com.plus.mevanspn.bridge.Memory;
-import com.plus.mevanspn.bridge.MemoryMissingException;
+import com.plus.mevanspn.bridge.Storage.RAM.*;
 
 /** A logical AND is performed bit by bit on the Accumulator using a location in memory, leaving
  * the result in the Accumulator.

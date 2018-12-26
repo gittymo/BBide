@@ -1,9 +1,6 @@
 package com.plus.mevanspn.bridge.Processor.OpCodes.Other;
 
-import com.plus.mevanspn.bridge.InvalidAddressException;
-import com.plus.mevanspn.bridge.InvalidAddressModeException;
-import com.plus.mevanspn.bridge.Memory;
-import com.plus.mevanspn.bridge.MemoryMissingException;
+import com.plus.mevanspn.bridge.Storage.RAM.*;
 import com.plus.mevanspn.bridge.Processor.OpCode;
 
 /** THe CLC class is used to create objects representing the CLC assembler mnemonic in

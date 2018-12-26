@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.plus.mevanspn.bridge;
+package com.plus.mevanspn.bridge.Storage.DFS;
 
 /**
  *
  * @author win10
  */
-public class DiskFullException extends Exception {
-
-	public DiskFullException() {
+public class CatalogueFullException extends Exception {
+	public CatalogueFullException() {
+		
 	}
-	
 }
