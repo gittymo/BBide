@@ -4,8 +4,18 @@ import com.plus.mevanspn.bridge.Storage.RAM.*;
 
 public class ADC extends com.plus.mevanspn.bridge.Processor.OpCode {
 	@Override
-	public char[] getASM() {
-		return null;
+	public int[] getASM() {
+		switch (addressMode) {
+			case Immediate : return new int[] {0x69, value & 0xFF};
+			case ZeroPage : return new int[] {0x65, address & 0xFF};
+			case ZeroPageX : return new int[] {0x75, address & 0xFF};
+			case Absolute : return new int[] {0x6D, (address & 0xFF), ((address >> 8) & 0xFF)};
+			case AbsoluteX : return new int[] {0x7D, (address & 0xFF), ((address >> 8) & 0xFF)};
+			case AbsoluteY : return new int[] {0x79, (address & 0xFF), ((address >> 8) & 0xFF)};
+			case PreIndirectX : return new int[] {0x61, address & 0xFF};
+			case PostIndirectY: return new int[] {0x71, address & 0xFF};
+			default : return null;
+		}
 	}
 
 	@Override
@@ -15,7 +25,17 @@ public class ADC extends com.plus.mevanspn.bridge.Processor.OpCode {
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
+		switch (addressMode) {
+			case Immediate : return 2;
+			case ZeroPage : return 3;
+			case ZeroPageX:
+			case Absolute:
+			case AbsoluteX:
+			case AbsoluteY: return 4;
+			case PreIndirectX: return 6;
+			case PostIndirectY: return 5;
+			default: return 0;
+		}
 	}
 
 	@Override

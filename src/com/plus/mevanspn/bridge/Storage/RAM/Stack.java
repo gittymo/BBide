@@ -32,13 +32,12 @@ import com.plus.mevanspn.bridge.Storage.RAM.StackOverflowException;
 
 	public int pull() {
 		int stackPointer = memory.registers.get("SP");
-		if (stack_pointer >= 0x100) {
+		if (stackPointer > 0x100) {
 			memory.registers.replace("SP", stackPointer - 1);
 			return memory.memory[stackPointer];
 		}
 		return 0;
 	}
 
-	private int stack_pointer;
 	private Memory memory;
  }

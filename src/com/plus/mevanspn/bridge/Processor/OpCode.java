@@ -11,7 +11,7 @@ public abstract class OpCode {
 	 * Returns the assembler code for this instruction as an array of byte values
 	 * @return The assembler code including immediate values and addresses
 	 */
-	public abstract char[] getASM();
+	public abstract int[] getASM();
 
 	/**
 	 * Returns the size in bytes of the code for this instruction
