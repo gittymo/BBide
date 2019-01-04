@@ -13,18 +13,30 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
  */
 public class BIT extends OpCode {
 	@Override
-	public char[] getASM() {
-		return new char[0];
+	public int[] getASM() {
+		switch (addressMode) {
+			case ZeroPage : return new int[] { 0x24, address & 0xFF};
+			case Absolute : return new int[] { 0x2C, address & 0xFF, (address >> 8) & 0xFF };
+			default : return null;
+		}
 	}
 
 	@Override
 	public int getSize() {
-		return (addressMode == AddressMode.Absolute) ? 3 : 2;
+		switch (addressMode) {
+			case ZeroPage : return 2;
+			case Absolute : return 3;
+			default: return 0;
+		}
 	}
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
+		switch (addressMode) {
+			case ZeroPage : return 3;
+			case Absolute : return 4;
+			default: return 0;
+		}
 	}
 
 	@Override
@@ -40,8 +52,8 @@ public class BIT extends OpCode {
 		if (addressMode == AddressMode.ZeroPage) address = address & 255;
 		// Get value at address
 		int memoryValue = memory.getValueAt(address, addressMode);
-		//
-		int result = memoryValue & memory.registers.get('A');
+		// AND with Accumulator
+		int result = memoryValue & memory.registers.get("A");
 		memory.flags.replace('Z', (result == memoryValue));
 		// Set overflow flag to value of bit 6 of memory location
 		memory.flags.replace('V', (memoryValue & 64) == 64);

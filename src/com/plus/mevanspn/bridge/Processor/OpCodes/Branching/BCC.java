@@ -13,8 +13,8 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class BCC extends OpCode {
 
 	@Override
-	public char[] getASM() {
-		return null;
+	public int[] getASM() {
+		return new int[] { 0x90, address };
 	}
 
 	@Override
@@ -24,11 +24,11 @@ public class BCC extends OpCode {
 
 	@Override
 	public int getBaseCycles() {
-		return 2;
+		return 3;
 	}
 
 	public BCC(int address) {
-		this.address = address;
+		this.address = address & 0xFF;
 	}
 
 	@Override

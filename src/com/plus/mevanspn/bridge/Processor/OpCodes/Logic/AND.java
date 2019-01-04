@@ -12,23 +12,53 @@ import com.plus.mevanspn.bridge.Storage.RAM.*;
 public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
 
 	@Override
-	public char[] getASM() {
-		return null;
+	public int[] getASM() {
+		switch (addressMode) {
+			case Immediate: return new int[] { 0x29, addressOrValue & 0xFF };
+			case ZeroPage : return new int[] { 0x25, addressOrValue & 0xFF };
+			case ZeroPageX : return new int[] { 0x35, addressOrValue & 0xFF };
+			case Absolute : return new int[] { 0x2D, addressOrValue & 0xFF, (addressOrValue >> 8) & 0xFF};
+			case AbsoluteX : return new int[] { 0x3D, addressOrValue & 0xFF, (addressOrValue >> 8) & 0xFF};
+			case AbsoluteY : return new int[] { 0x39, addressOrValue & 0xFF, (addressOrValue >> 8) & 0xFF};
+			case PreIndirectX : return new int[] { 0x21, addressOrValue & 0XFF};
+			case PostIndirectY : return new int[] { 0x31, addressOrValue & 0xFF};
+			default : return null;
+		}
 	}
 
 	@Override
 	public int getSize() {
-		return 0;
+		switch (addressMode) {
+			case Immediate:
+			case ZeroPage:
+			case ZeroPageX:
+			case PostIndirectY:
+			case PreIndirectX: return 2;
+			case Absolute:
+			case AbsoluteX:
+			case AbsoluteY: return 3;
+			default: return 0;
+		}
 	}
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
+		switch (addressMode) {
+			case Immediate :
+			case ZeroPage : return 2;
+			case ZeroPageX : return 3;
+			case Absolute :
+			case AbsoluteX :
+			case AbsoluteY : return 4;
+			case PreIndirectX : return 6;
+			case PostIndirectY : return 5;
+			default : return 0;
+		}
 	}
 
 	public AND(AddressMode addressMode, int address) {
 		this.addressMode = addressMode;
-		this.address = address;
+		this.addressOrValue = address;
 	}
 
 	@Override
@@ -41,7 +71,7 @@ public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
 		// Get the accumulator value
 		int accumulator = memory.registers.get("A");
 		// Get the value stored in the given memory location
-		int mem = memory.getValueAt(address, addressMode);
+		int mem = memory.getValueAt(addressOrValue, addressMode);
 		// AND the two together
 		int result = (char) (mem & accumulator);
 		// Store the result back into the accumulator.
@@ -51,5 +81,5 @@ public class AND extends com.plus.mevanspn.bridge.Processor.OpCode {
 	}
 
 	private AddressMode addressMode;
-	private int address;
+	private int addressOrValue;
 }

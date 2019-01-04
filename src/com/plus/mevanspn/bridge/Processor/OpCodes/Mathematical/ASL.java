@@ -6,18 +6,39 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class ASL extends OpCode {
 
 	@Override
-	public char[] getASM() {
-		return null;
+	public int[] getASM() {
+		switch (addressMode) {
+			case Accumulator : return new int[] { 0x0A };
+			case ZeroPage : return new int[] { 0x06, address & 0xFF };
+			case ZeroPageX : return new int[] { 0x16, address & 0xFF };
+			case Absolute : return new int[] { 0x0E, address & 0xFF, (address >> 8) & 0xFF };
+			case AbsoluteX : return new int[] { 0x1E, address & 0xFF, (address >> 8) & 0xFF };
+			default : return null;
+		}
 	}
 
 	@Override
 	public int getSize() {
-		return 0;
+		switch (addressMode) {
+			case Accumulator : return 1;
+			case ZeroPage :
+			case ZeroPageX : return 2;
+			case Absolute :
+			case AbsoluteX : return 3;
+			default: return 0;
+		}
 	}
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
+		switch (addressMode) {
+			case Accumulator : return 2;
+			case ZeroPage : return 5;
+			case ZeroPageX :
+			case Absolute : return 6;
+			case AbsoluteX : return 7;
+			default: return 0;
+		}
 	}
 
 	public ASL(AddressMode addressMode, int address) {
@@ -32,34 +53,17 @@ public class ASL extends OpCode {
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
 		// Get the base value
-		int baseValue = (addressMode == AddressMode.Accumulator) ?
-						memory.registers.get("A") : memory.getValueAt(address, addressMode);
+		int baseValue = memory.getValueAt(address, addressMode);
 		// Get the value shifted one place to the left (i.e. value x 2)
-		char shiftedValue = (char) (memory.registers.get("A") << 1);
+		char shiftedValue = (char) (baseValue << 1);
 		// Determine if the 9th bit is set.
 		boolean carry = (shiftedValue > 255) ? true : false;
 		// Set the carry flag accoringly.
 		memory.flags.replace('C', carry);
-		// Is the address mode Accumulator?
-		if (addressMode == AddressMode.Accumulator) {
-			// Set the negative and zero flags accordingly
-			memory.setNegativeZeroFlags();
-			// Store the shifted value less the 9th bit in the accumulator
-			memory.registers.replace("A", shiftedValue & 255);
-		} else {
-			// Set negative flag accordingly
-			if ((shiftedValue & 128) > 0)
-				memory.flags.replace('N', true);
-			else
-				memory.flags.replace('N', false);
-			// Set zero flag accorindingly
-			if ((shiftedValue & 255) == 0)
-				memory.flags.replace('Z', true);
-			else
-				memory.flags.replace('Z', false);
-			// Store the shifted value less the 9th bit in the required memory location
-			memory.setValueAt(((char) (shiftedValue & 255)), address, addressMode);
-		}
+		// Set the negative and zero flags accordingly
+		memory.setNegativeZeroFlags();
+		// Store the shifted value less the 9th bit in the required memory location (or the Accumulator)
+		memory.setValueAt(((char) (shiftedValue & 255)), address, addressMode);
 	}
 
 	private AddressMode addressMode;
