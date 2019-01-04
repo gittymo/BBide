@@ -11,8 +11,8 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class BNE extends OpCode {
 
 	@Override
-	public char[] getASM() {
-		return null;
+	public int[] getASM() {
+		return new int[] { 0xD0, address };
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class BNE extends OpCode {
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
+		return 3;
 	}
 
 	public BNE(int address) {

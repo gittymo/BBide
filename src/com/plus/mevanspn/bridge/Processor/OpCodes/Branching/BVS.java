@@ -12,8 +12,8 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class BVS extends OpCode {
 
 	@Override
-	public char[] getASM() {
-		return null;
+	public int[] getASM() {
+		return new int[] { 0x70, address };
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class BVS extends OpCode {
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
+		return 3;
 	}
 
 	public BVS(int address) {

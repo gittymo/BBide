@@ -11,18 +11,18 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class BEQ extends OpCode {
 
 	@Override
-	public char[] getASM() {
-		return null;
+	public int[] getASM() {
+		return new int[] { 0xF0, address };
 	}
 
 	@Override
 	public int getSize() {
-		return 0;
+		return 2;
 	}
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
+		return 3;
 	}
 
 	public BEQ(int address) {

@@ -27,7 +27,7 @@ public class BCS extends OpCode {
 	}
 
 	public BCS(int address) {
-		this.address = address & 0xFF;
+		this.address = address;
 	}
 
 	@Override
