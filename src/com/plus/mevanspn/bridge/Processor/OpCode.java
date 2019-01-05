@@ -30,13 +30,12 @@ public abstract class OpCode {
 	 * Performs the purpose of the instruction on the given memory address.  If an invalid address or address mode is
 	 * given, this method will throw the appropriate exception.
 	 * @param memory The target memory object to perform the instruction on.
-	 * @throws InvalidAddressModeException
 	 * @throws InvalidAddressException
 	 * @throws MemoryMissingException
 	 * @throws StackOverflowException
 	 */
-	public abstract void perform(Memory memory)
-					throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException,
+	public abstract void perform(Memory memory) throws
+					InvalidAddressException, MemoryMissingException,
 					StackOverflowException;
 
 	public enum AddressMode {

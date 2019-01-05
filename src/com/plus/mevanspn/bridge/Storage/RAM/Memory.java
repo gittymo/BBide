@@ -3,10 +3,12 @@ package com.plus.mevanspn.bridge.Storage.RAM;
 import java.util.HashMap;
 import java.util.Vector;
 import com.plus.mevanspn.bridge.Processor.OpCode;
+import com.plus.mevanspn.bridge.*;
 
 public class Memory {
-	public Memory() {
+	public Memory(Model model) {
 		program = new Vector<OpCode>();
+		this.model = model;
 		initFlags();
 		initRegisters();
 		initMemory();
@@ -173,7 +175,12 @@ public class Memory {
 		stack = new Stack(this);
 	}
 
+	public int getSize() {
+		return memory.length;
+	}
+	
 	private Vector<OpCode> program;
+	private Model model;
 	public HashMap<String, Integer> registers;
 	public HashMap<Character, Boolean> flags;
 	public int[] memory;
