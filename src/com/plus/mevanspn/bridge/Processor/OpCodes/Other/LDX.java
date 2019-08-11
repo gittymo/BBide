@@ -6,12 +6,12 @@ import com.plus.mevanspn.bridge.Storage.RAM.InvalidAddressModeException;
 import com.plus.mevanspn.bridge.Storage.RAM.Memory;
 import com.plus.mevanspn.bridge.Storage.RAM.MemoryMissingException;
 
-/** The LDA class is used to create objects representing the LDA assembler mnemonic in
- * BBide programs.  The purpose of this mnemonic is to load the Accumulator with a value
- * from memory.  The (Z)ero flag is set if the Accumulator is loaded with zero (0) and the
- * (N)egative flag is set if bit 7 of the Accumulator is set.  No other flags in the status
+/** The LDX class is used to create objects representing the LDX assembler mnemonic in
+ * BBide programs.  The purpose of this mnemonic is to load the X register with a value
+ * from memory.  The (Z)ero flag is set if the X register is loaded with zero (0) and the
+ * (N)egative flag is set if bit 7 of the X register is set.  No other flags in the status
  * register are affected by this operation. */
-public class LDA extends OpCode {
+public class LDX extends OpCode {
 	@Override
 	public int[] getASM() {
 		return new int[0];
@@ -22,11 +22,8 @@ public class LDA extends OpCode {
 		switch (addressMode) {
 			case Immediate:
 			case ZeroPage:
-			case ZeroPageX:
-			case PreIndirectX:
-			case PostIndirectY: return 2;
+			case ZeroPageY: return 2;
 			case Absolute:
-			case AbsoluteX:
 			case AbsoluteY: return 3;
 		}
 
@@ -38,18 +35,15 @@ public class LDA extends OpCode {
 		switch (addressMode) {
 			case Immediate: return 2;
 			case ZeroPage: return 3;
-			case ZeroPageX:
+			case ZeroPageY:
 			case Absolute:
-			case AbsoluteX:
 			case AbsoluteY: return 4;
-			case PostIndirectY: return 5;
-			case PreIndirectX: return 6;
 		}
 
 		return 0;
 	}
 
-	public LDA(int address, AddressMode addressMode) {
+	public LDX(int address, AddressMode addressMode) {
 		this.address = address;
 		this.addressMode = addressMode;
 	}
@@ -59,8 +53,13 @@ public class LDA extends OpCode {
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
 		if (addressMode == null) throw new InvalidAddressModeException();
+		if (addressMode != AddressMode.Immediate &&
+				addressMode != AddressMode.ZeroPage &&
+				addressMode != AddressMode.ZeroPageY &&
+				addressMode != AddressMode.Absolute &&
+				addressMode != AddressMode.AbsoluteY) throw new InvalidAddressException();
 		// Clear the carry flag
-		memory.registers.replace("A", memory.getValueAt(this.address, this.addressMode));
+		memory.registers.replace("X", memory.getValueAt(this.address, this.addressMode));
 	}
 
 	private AddressMode addressMode;

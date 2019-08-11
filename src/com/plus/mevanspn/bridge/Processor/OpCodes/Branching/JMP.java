@@ -13,14 +13,20 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class JMP extends OpCode {
 
 	@Override
-	public char[] getASM() {
-		return null;
+	public int[] getASM() {
+		switch (addressMode) {
+			case Absolute:
+				return new int[] { 0x4C, address & 0xFF, (address & 0xFF00) >> 8};
+			case Indirect:
+				return new int[] { 0x6C, address & 0xFF, (address & 0xFF00) >> 8};
+			default: return null;
+		}
 	}
 
 	@Override
 	public int getSize() {
 		switch (addressMode) {
-			case Absolute: return 3;
+			case Absolute:
 			case Indirect: return 3;
 			default: return 0;
 		}
@@ -46,6 +52,9 @@ public class JMP extends OpCode {
 	{
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
+		// Make sure we're using the correct addressing modes
+		if (addressMode != AddressMode.Absolute &&
+				addressMode != AddressMode.Indirect) throw new InvalidAddressModeException();
 		// Get the new program counter address
 		int newPCAddress = memory.getValueAt(address, addressMode);
 		// Move the program counter to new address.

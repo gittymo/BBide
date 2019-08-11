@@ -25,7 +25,7 @@ public class Memory {
 	public int getValueAt(int offset, OpCode.AddressMode addressMode)
 		throws InvalidAddressModeException, InvalidAddressException
 	{
-		if (offset < 0 || offset > 32767) throw new InvalidAddressException();
+		if (offset < 0 || offset >= model.getRAMSize()) throw new InvalidAddressException();
 		if (offset > 255 && (
 						addressMode != OpCode.AddressMode.Absolute && 
 						addressMode != OpCode.AddressMode.AbsoluteX &&
@@ -34,21 +34,27 @@ public class Memory {
 		switch (addressMode) {
 			case Immediate: return offset;
 			case ZeroPage: return memory[offset];
-			case ZeroPageX: return memory[offset + registers.get("X")];
+			case ZeroPageX: {
+				return memory[offset + registers.get("X")];
+			}
+			case ZeroPageY: {
+				return memory[offset + registers.get("Y")];
+			}
 			case Absolute: return memory[offset];
 			case AbsoluteX: {
 				int xOffset = offset + registers.get("X");
-				if (xOffset > 32767) throw new InvalidAddressException();
+				if (xOffset >= model.getRAMSize()) throw new InvalidAddressException();
 				return memory[xOffset];
 			}
 			case AbsoluteY: {
 				int yOffset = offset + registers.get("Y");
-				if (yOffset > 32767) throw new InvalidAddressException();
+				if (yOffset >= model.getRAMSize()) throw new InvalidAddressException();
 				return memory[yOffset];
 			}
 			case PreIndirectX: {
-				// 16 bit adress is stored in (base + x, base + 1 + x) where base < &100
+				// 16 bit address is stored in (base + x, base + 1 + x) where base < &100
 				int baseOffset = offset + registers.get("X");
+				if (baseOffset + 1 >= model.getRAMSize()) throw new InvalidAddressException();
 				int indirectAddress =
 								(memory[baseOffset] & 255) + ((memory[baseOffset + 1] & 255) << 8);
 				return memory[indirectAddress];
@@ -57,18 +63,21 @@ public class Memory {
 				// 16 bit address is a combination of the indirect 16 bit address taken
 				// from (base, base + 1) which is then incremented by the value stored in
 				// Y
+				if (offset + 1 >= model.getRAMSize()) throw new InvalidAddressException();
 				int indirectAddress =
 								(memory[offset] & 255) + ((memory[offset + 1] & 255) << 8) +
 												registers.get("Y");
-				
+				if (indirectAddress >= model.getRAMSize()) throw new InvalidAddressException();
 				return memory[indirectAddress];
 			}
 			case Accumulator: {
 				return registers.get("A");
 			}
 			case Indirect : {
+				if (offset + 1 >= model.getRAMSize()) throw new InvalidAddressException();
 				int indirectAddress =
 								(memory[offset] & 255) + ((memory[offset + 1] & 255) << 8);
+				if (indirectAddress >= model.getRAMSize()) throw new InvalidAddressException();
 				return indirectAddress;
 			}
 			default: throw new InvalidAddressException();
@@ -78,7 +87,7 @@ public class Memory {
 	public void setValueAt(int value, int offset, OpCode.AddressMode addressMode)
 		throws InvalidAddressModeException, InvalidAddressException
 	{
-		if (offset < 0 || offset > 32767) throw new InvalidAddressException();
+		if (offset < 0 || offset >= model.getRAMSize()) throw new InvalidAddressException();
 		if (offset > 255 && (
 						addressMode != OpCode.AddressMode.Absolute && 
 						addressMode != OpCode.AddressMode.AbsoluteX &&
@@ -94,30 +103,38 @@ public class Memory {
 			case ZeroPageX : {
 				memory[offset + registers.get("X")] = value;
 			} break;
-			
+
+			case ZeroPageY: {
+				memory[offset + registers.get("Y")] = value;
+			}
+
 			case AbsoluteX : {
-				if (offset + registers.get("X") > 32767)
+				if (offset + registers.get("X") >= model.getRAMSize())
 					throw new InvalidAddressException();
 				memory[offset + registers.get("X")] = value;
 			} break;
 			
 			case AbsoluteY : {
-				if (offset + registers.get("Y") > 32767)
+				if (offset + registers.get("Y") >= model.getRAMSize())
 					throw new InvalidAddressException();
 				memory[offset + registers.get("Y")] = value;
 			} break;
 			
 			case PreIndirectX : {
 				int baseOffset = offset + registers.get("X");
+				if (baseOffset + 1 >= model.getRAMSize()) throw new InvalidAddressException();
 				int indirectAddress =
 								(memory[baseOffset] & 255) + ((memory[baseOffset + 1] & 255) << 8);
+				if (indirectAddress >= model.getRAMSize()) throw new InvalidAddressException();
 				memory[indirectAddress] = value;
 			} break;
 			
 			case PostIndirectY : {
+				if (offset + 1 >= model.getRAMSize()) throw new InvalidAddressException();
 				int indirectAddress =
 								(memory[offset] & 255) + ((memory[offset + 1] & 255) << 8) +
 												registers.get("Y");
+				if (indirectAddress >= model.getRAMSize()) throw new InvalidAddressException();
 				memory[indirectAddress] = value;
 			} break;
 
@@ -169,8 +186,8 @@ public class Memory {
 	}
 
 	private void initMemory() {
-		memory = new int[32768];
-		for (int i = 0; i < 32768; i++)
+		memory = new int[model.getRAMSize()];
+		for (int i = 0; i < model.getRAMSize(); i++)
 			memory[i] = 0;
 		stack = new Stack(this);
 	}

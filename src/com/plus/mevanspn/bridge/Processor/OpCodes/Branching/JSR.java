@@ -14,8 +14,10 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class JSR extends OpCode {
 
 	@Override
-	public char[] getASM() {
-		return null;
+	public int[] getASM() {
+		if (addressMode == AddressMode.Absolute)
+			return new int[] { 0x20, address & 0xFF, (address & 0xFF00) >> 8};
+		else return null;
 	}
 
 	@Override
@@ -45,6 +47,8 @@ public class JSR extends OpCode {
 	{
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
+		// Make sure we're using the correct addressing mode
+		if (addressMode != AddressMode.Absolute) throw new InvalidAddressModeException();
 		// Get and push the program counter onto the stack
 		int pc = memory.registers.get("PC");
 		memory.stack.push(pc);

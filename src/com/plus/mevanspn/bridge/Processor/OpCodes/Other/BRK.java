@@ -12,8 +12,8 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
  */
 public class BRK extends OpCode {
 	@Override
-	public char[] getASM() {
-		return new char[0];
+	public int[] getASM() {
+		return new int[0];
 	}
 
 	@Override

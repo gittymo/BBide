@@ -52,6 +52,11 @@ public class ASL extends OpCode {
 	{
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
+		if (addressMode != AddressMode.Accumulator &&
+				addressMode != AddressMode.ZeroPage &&
+				addressMode != AddressMode.ZeroPageX &&
+				addressMode != AddressMode.Absolute &&
+				addressMode != AddressMode.AbsoluteX) throw new InvalidAddressModeException();
 		// Get the base value
 		int baseValue = memory.getValueAt(address, addressMode);
 		// Get the value shifted one place to the left (i.e. value x 2)

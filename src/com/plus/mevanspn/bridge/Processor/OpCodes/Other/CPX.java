@@ -17,8 +17,14 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
  * and no other flags are affected. */
 public class CPX extends OpCode {
 	@Override
-	public char[] getASM() {
-		return new char[0];
+	public int[] getASM() {
+		switch (addressMode) {
+			case Immediate: return new int[] { 0xE0, addressOrValue & 0xFF };
+			case ZeroPage: return new int[] { 0xE4, addressOrValue & 0xFF };
+			case Absolute:
+				return new int[] { 0xEC, addressOrValue & 0xFF, (addressOrValue & 0xFF00) >> 8 };
+			default: return null;
+		}
 	}
 
 	@Override
@@ -68,6 +74,10 @@ public class CPX extends OpCode {
 	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException {
 		// Make sure we've got a viable memory object
 		if (memory == null) throw new MemoryMissingException();
+		// Make sure we're using a valid addressing mode
+		if (addressMode != AddressMode.Absolute &&
+				addressMode != AddressMode.Immediate &&
+				addressMode != AddressMode.ZeroPage) throw new InvalidAddressModeException();
 
 		// Get comparison result (A - value (or value at memory address))
 		int result;

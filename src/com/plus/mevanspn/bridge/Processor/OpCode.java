@@ -36,12 +36,13 @@ public abstract class OpCode {
 	 */
 	public abstract void perform(Memory memory) throws
 					InvalidAddressException, MemoryMissingException,
-					StackOverflowException;
+					StackOverflowException, InvalidAddressModeException;
 
 	public enum AddressMode {
 		Immediate(2,2),
 		ZeroPage(2,3),
 		ZeroPageX(2,4),
+		ZeroPageY(2, 4),
 		Absolute(3,4),
 		AbsoluteX(3,4),
 		AbsoluteY(3,4),

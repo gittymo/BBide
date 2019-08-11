@@ -12,8 +12,8 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
  * No other flags are affected. */
 public class INX extends OpCode {
 	@Override
-	public char[] getASM() {
-		return new char[0];
+	public int[] getASM() {
+		return new int[0];
 	}
 
 	@Override

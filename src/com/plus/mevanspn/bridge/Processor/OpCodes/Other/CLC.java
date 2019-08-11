@@ -10,8 +10,8 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
  * operation. */
 public class CLC extends OpCode {
 	@Override
-	public char[] getASM() {
-		return new char[0];
+	public int[] getASM() {
+		return new int[0];
 	}
 
 	@Override

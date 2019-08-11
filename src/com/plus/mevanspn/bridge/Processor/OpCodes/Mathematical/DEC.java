@@ -11,8 +11,16 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
  * No other flags are affected. */
 public class DEC extends OpCode {
 	@Override
-	public char[] getASM() {
-		return new char[0];
+	public int[] getASM() {
+		switch (addressMode) {
+			case ZeroPage: return new int[] { 0xC6, addressOrValue & 0xFF};
+			case ZeroPageX: return new int[] { 0xD6, addressOrValue & 0xFF};
+			case Absolute:
+				return new int[] { 0xCE, addressOrValue & 0xFF, (addressOrValue & 0xFF00) >> 8};
+			case AbsoluteX:
+				return new int[] { 0xDE, addressOrValue & 0xFF, (addressOrValue & 0xFF00) >> 8};
+			default: return null;
+		}
 	}
 
 	@Override
@@ -32,7 +40,7 @@ public class DEC extends OpCode {
 		if (addressMode == null) return 0;
 		switch (addressMode) {
 			case ZeroPage : return 5;
-			case ZeroPageX : return 6;
+			case ZeroPageX :
 			case Absolute : return 6;
 			case AbsoluteX : return 7;
 			default : return 0;
@@ -59,7 +67,13 @@ public class DEC extends OpCode {
 		// Make sure we've got a viable memory object
 		if (memory == null) throw new MemoryMissingException();
 
-		// Get the ddecremented value of the memory location.
+		// Make sure we're using a valid addressing mode
+		if (addressMode != AddressMode.ZeroPage &&
+				addressMode != AddressMode.ZeroPageX &&
+				addressMode != AddressMode.Absolute &&
+				addressMode != AddressMode.AbsoluteX) throw new InvalidAddressModeException();
+
+		// Get the decremented value of the memory location.
 		int result;
 		switch (addressMode) {
 			case ZeroPage:

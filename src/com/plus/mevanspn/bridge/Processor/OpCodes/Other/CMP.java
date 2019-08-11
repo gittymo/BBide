@@ -17,8 +17,8 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
  * affected. */
 public class CMP extends OpCode {
 	@Override
-	public char[] getASM() {
-		return new char[0];
+	public int[] getASM() {
+		return new int[0];
 	}
 
 	@Override

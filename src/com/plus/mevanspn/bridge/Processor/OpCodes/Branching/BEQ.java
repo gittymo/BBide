@@ -26,13 +26,13 @@ public class BEQ extends OpCode {
 	}
 
 	public BEQ(int address) {
+		if (address < -128) address = -128;
+		if (address > 127) address = 127;
 		this.address = address;
 	}
 
 	@Override
 	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException {
-		// Make sure address value is within relative range.
-		if (address < -128 || address > 127) throw new InvalidAddressException();
 		// Get the new program counter address
 		int newPCAddress = memory.registers.get("PC") + address;
 		// If the zero flag is set (1) we can move the program counter to new address.
