@@ -60,7 +60,10 @@ public class LSR extends OpCode {
 				addressMode != AddressMode.Absolute &&
 				addressMode != AddressMode.AbsoluteX) throw new InvalidAddressException();
 
-		memory.registers.replace("Y", memory.getValueAt(this.address, this.addressMode));
+		int memoryValue = memory.getValueAt(this.address, this.addressMode);
+		if ((memoryValue & 1) == 1) memory.flags.replace('C', true);
+		else memory.flags.replace('C', false);
+		memory.setValueAt(memoryValue >> 1, this.address, this.addressMode);
 	}
 
 	private AddressMode addressMode;
