@@ -35,7 +35,7 @@ public class INC extends OpCode {
 		if (addressMode == null) return 0;
 		switch (addressMode) {
 			case ZeroPage : return 5;
-			case ZeroPageX : return 6;
+			case ZeroPageX :
 			case Absolute : return 6;
 			case AbsoluteX : return 7;
 			default : return 0;
@@ -79,6 +79,6 @@ public class INC extends OpCode {
 		setFlagsBasedUponResult(result, memory);
 	}
 
-	private AddressMode addressMode;
-	private int addressOrValue;
+	private final AddressMode addressMode;
+	private final int addressOrValue;
 }

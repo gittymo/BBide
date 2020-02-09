@@ -80,7 +80,7 @@ public class ADC extends com.plus.mevanspn.bridge.Processor.OpCode {
 		this.address = address;
 	}
 
-	private AddressMode addressMode;
-	private char value;
-	private int address;
+	private final AddressMode addressMode;
+	private final char value;
+	private final int address;
 }

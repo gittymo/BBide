@@ -30,9 +30,8 @@ class MemoryArea {
 		// If this memory area is not a reserved area we can automatically say true...
 		if (!reserved) return true;
 		// ... otherwise, if the address falls within range, say false.
-		if (address >= start && address <= end) return false;
+		return address < start || address > end;
 		// Finally, the address is outside the reserved space and sensible so say true.
-		return true;
 	}
 	
 	private boolean reserved;

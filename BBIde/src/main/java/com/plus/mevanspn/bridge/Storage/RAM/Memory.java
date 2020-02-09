@@ -7,7 +7,7 @@ import com.plus.mevanspn.bridge.*;
 
 public class Memory {
 	public Memory(Model model) {
-		program = new Vector<OpCode>();
+		program = new Vector<>();
 		this.model = model;
 		initFlags();
 		initRegisters();
@@ -23,7 +23,7 @@ public class Memory {
 	}
 
 	public int getValueAt(int offset, OpCode.AddressMode addressMode)
-		throws InvalidAddressModeException, InvalidAddressException
+		throws InvalidAddressException
 	{
 		if (offset < 0 || offset >= model.getRAMSize()) throw new InvalidAddressException();
 		if (offset > 255 && (
@@ -33,14 +33,14 @@ public class Memory {
 				)) throw new InvalidAddressException();
 		switch (addressMode) {
 			case Immediate: return offset;
-			case ZeroPage: return memory[offset];
+			case ZeroPage:
+			case Absolute: return memory[offset];
 			case ZeroPageX: {
 				return memory[offset + registers.get("X")];
 			}
 			case ZeroPageY: {
 				return memory[offset + registers.get("Y")];
 			}
-			case Absolute: return memory[offset];
 			case AbsoluteX: {
 				int xOffset = offset + registers.get("X");
 				if (xOffset >= model.getRAMSize()) throw new InvalidAddressException();
@@ -164,7 +164,7 @@ public class Memory {
 
 
 	private void initRegisters() {
-		registers = new HashMap<String, Integer>();
+		registers = new HashMap<>();
 		registers.clear();
 		registers.put("A", 0); // Accumulator
 		registers.put("X", 0); // X register
@@ -174,7 +174,7 @@ public class Memory {
 	}
 
 	private void initFlags() {
-		flags = new HashMap<Character, Boolean>();
+		flags = new HashMap<>();
 		flags.clear();
 		flags.put('C', false);  // Carry flag
 		flags.put('V', false);  // Overflow flag
@@ -196,8 +196,8 @@ public class Memory {
 		return memory.length;
 	}
 	
-	private Vector<OpCode> program;
-	private Model model;
+	private final Vector<OpCode> program;
+	private final Model model;
 	public HashMap<String, Integer> registers;
 	public HashMap<Character, Boolean> flags;
 	public int[] memory;

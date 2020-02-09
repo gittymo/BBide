@@ -46,7 +46,7 @@ final public class FontCharacter {
 		// Sanity check, do nothing if the horizontal location is invalid.
 		if (x < 0 || x > 7) return;
 		// Sanity check, do nothing if the vertical location is invalid.
-		if (x < 0 || y > 7) return;
+		if (y < 0 || y > 7) return;
 
 		// If we've got this far everything's fine so set the pixel to the given colour.
 		characterImage.setRGB(x, y, colour.getRGB());
@@ -72,7 +72,7 @@ final public class FontCharacter {
 
 	public void writeToStream(DataOutputStream dos) throws IOException {
 		if (dos != null) {
-			int vduCodes[] = this.getVDUCodes();
+			int[] vduCodes = this.getVDUCodes();
 			if (vduCodes != null) {
 				dos.writeByte(this.asciiValue);
 				for (int vduCode : vduCodes) {
@@ -82,7 +82,7 @@ final public class FontCharacter {
 		}
 	}
 
-	private char asciiValue;
-	private BufferedImage characterImage;
-	private IndexColorModel characterImagePalette;
+	private final char asciiValue;
+	private final BufferedImage characterImage;
+	private final IndexColorModel characterImagePalette;
 }

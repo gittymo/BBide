@@ -93,6 +93,6 @@ public class CPX extends OpCode {
 		setFlagsBasedUponResult(result, memory);
 	}
 
-	private AddressMode addressMode;
-	private int addressOrValue;
+	private final AddressMode addressMode;
+	private final int addressOrValue;
 }

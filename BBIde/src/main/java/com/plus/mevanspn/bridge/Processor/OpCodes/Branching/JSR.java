@@ -22,18 +22,18 @@ public class JSR extends OpCode {
 
 	@Override
 	public int getSize() {
-		switch (addressMode) {
-			case Absolute: return 3;
-			default: return 0;
+		if (addressMode == AddressMode.Absolute) {
+			return 3;
 		}
+		return 0;
 	}
 
 	@Override
 	public int getBaseCycles() {
-		switch (addressMode) {
-			case Absolute: return 6;
-			default: return 0;
+		if (addressMode == AddressMode.Absolute) {
+			return 6;
 		}
+		return 0;
 	}
 
 	public JSR(int address, AddressMode addressMode) {
@@ -58,6 +58,6 @@ public class JSR extends OpCode {
 		memory.registers.replace("PC", newPCAddress);
 	}
 
-	private int address;
-	private AddressMode addressMode;
+	private final int address;
+	private final AddressMode addressMode;
 }

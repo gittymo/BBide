@@ -46,12 +46,10 @@ public class BIT extends OpCode {
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
 		// Only allow zero page and absolute addressing, throw an exception for the rest.
-		if (addressMode != AddressMode.ZeroPage ||
+		if (addressMode != AddressMode.ZeroPage &&
 						addressMode != AddressMode.Absolute) throw new InvalidAddressModeException();
 		// Make sure zero page addressing is within range.
 		if (addressMode == AddressMode.ZeroPage) address = address & 255;
-		if (addressMode != AddressMode.ZeroPage &&
-				addressMode != AddressMode.Absolute) throw new InvalidAddressModeException();
 		// Get value at address
 		int memoryValue = memory.getValueAt(address, addressMode);
 		// AND with Accumulator
@@ -68,6 +66,6 @@ public class BIT extends OpCode {
 		this.address = address;
 	}
 
-	private AddressMode addressMode;
+	private final AddressMode addressMode;
 	private int address;
 }

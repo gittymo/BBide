@@ -66,6 +66,6 @@ public class LSR extends OpCode {
 		memory.setValueAt(memoryValue >> 1, this.address, this.addressMode);
 	}
 
-	private AddressMode addressMode;
-	private int address;
+	private final AddressMode addressMode;
+	private final int address;
 }

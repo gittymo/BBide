@@ -70,17 +70,12 @@ public final class MultiSlider extends JPanel implements ValueChangeListener {
         Graphics2D g2 = (Graphics2D) g;
         g2.setPaint(Color.DARK_GRAY);
 
-        switch (this.orientation) {
-            case HORIZONTAL: {
-                int middle = this.getHeight() / 2;
-                g2.drawLine(8, middle, this.getWidth() - 16, middle);
-            }
-            break;
-
-            default: {
-                int middle = this.getWidth() / 2;
-                g2.drawLine(middle, 8, middle, this.getHeight() - 16);
-            }
+        if (this.orientation == ORIENTATION.HORIZONTAL) {
+            int middle = this.getHeight() / 2;
+            g2.drawLine(8, middle, this.getWidth() - 16, middle);
+        } else {
+            int middle = this.getWidth() / 2;
+            g2.drawLine(middle, 8, middle, this.getHeight() - 16);
         }
     }
 
@@ -115,10 +110,10 @@ public final class MultiSlider extends JPanel implements ValueChangeListener {
     }
 
     public enum ORIENTATION {
-        HORIZONTAL, VERTICAL, BOTH;
+        HORIZONTAL, VERTICAL, BOTH
     }
 
-    private ORIENTATION orientation;
+    private final ORIENTATION orientation;
     private int min_value, max_value, step_size;
     private boolean can_cross;
     private LinkedList<MultiSliderTab> tabs;
@@ -152,9 +147,9 @@ class MultiSliderTab {
     }
 
     private MultiSlider parent;
-    private ValueChangeListener v;
-    private String name;
-    private Color colour;
-    private int value;
+    private final ValueChangeListener v;
+    private final String name;
+    private final Color colour;
+    private final int value;
     private boolean is_active;
 }

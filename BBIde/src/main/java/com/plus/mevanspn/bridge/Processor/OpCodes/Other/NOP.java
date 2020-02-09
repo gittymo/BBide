@@ -27,17 +27,7 @@ public class NOP extends OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException,
-		MemoryMissingException
-	{
+	public void perform(Memory memory) {
 		memory.registers.replace("PC", memory.registers.get("PC") + 1);
 	}
-
-	public NOP(AddressMode addressMode, int address) {
-		this.addressMode = addressMode;
-		this.address = address;
-	}
-
-	private AddressMode addressMode;
-	private int address;
 }

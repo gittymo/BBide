@@ -33,12 +33,12 @@ public class BVS extends OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException {
+	public void perform(Memory memory) {
 		// Get the new program counter address
 		int newPCAddress = memory.registers.get("PC") + address;
 		// If the negative flag is set (1) we can move the program counter to new address.
 		if (memory.flags.get('V')) memory.registers.replace("PC", newPCAddress);
 	}
 
-	private int address;
+	private final int address;
 }

@@ -62,6 +62,6 @@ public class LDX extends OpCode {
 		memory.registers.replace("X", memory.getValueAt(this.address, this.addressMode));
 	}
 
-	private AddressMode addressMode;
-	private int address;
+	private final AddressMode addressMode;
+	private final int address;
 }

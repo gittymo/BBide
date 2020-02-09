@@ -10,6 +10,6 @@ package com.plus.mevanspn.ui;
  * @author win10
  */
 public interface ValueChangeListener {
-	public void valueChanged(int new_value);
+	void valueChanged(int new_value);
 	MultiSlider.ORIENTATION getOrientation();
 }

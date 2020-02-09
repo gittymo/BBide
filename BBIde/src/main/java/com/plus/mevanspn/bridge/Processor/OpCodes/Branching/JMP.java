@@ -61,6 +61,6 @@ public class JMP extends OpCode {
 		memory.registers.replace("PC", newPCAddress);
 	}
 
-	private int address;
-	private AddressMode addressMode;
+	private final int address;
+	private final AddressMode addressMode;
 }

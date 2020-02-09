@@ -26,7 +26,7 @@ public class PLA extends OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException {
+	public void perform(Memory memory) throws MemoryMissingException {
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
 

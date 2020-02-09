@@ -12,6 +12,6 @@ import java.awt.Color;
  * @author win10
  */
 public interface PaletteChangeListener {
-	public void activeColourChanged(Color colour);
-	public void paletteEntryChanged();
+	void activeColourChanged(Color colour);
+	void paletteEntryChanged();
 }

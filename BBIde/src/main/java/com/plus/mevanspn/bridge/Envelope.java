@@ -37,9 +37,9 @@ public class Envelope {
 	String name;
 	byte step_length;
 	byte auto_repeat;
-	byte pitch_changes[];
-	short step_counts[];
-	byte amp_changes[];
+	byte[] pitch_changes;
+	short[] step_counts;
+	byte[] amp_changes;
 	byte attack_target, decay_target;
 	
 	static int id = 0;

@@ -39,5 +39,5 @@ import com.plus.mevanspn.bridge.Storage.RAM.StackOverflowException;
 		return 0;
 	}
 
-	private Memory memory;
+	private final Memory memory;
  }

@@ -17,18 +17,18 @@ public interface DFSFile {
      * Returns the file name of the file.
      * @return A reflection of the filename stored within a DFS Disk catalogue.
      */
-    public String getFileName();
-    public void setFileName(String file_name);
-    public int getLoadAddress();
-    public void setLoadAddress(int load_address);
-    public int getExecAddress();
-    public void setExecAddress(int exec_address);
-    public short getStartSector();
-    public void setStartSection(short start_sector);
-    public char getDirectory();
-    public void setDirectory(char directory);
-    public DFSDisk getParentDisk();
-    public void setParentDisk(DFSDisk parent_disk);
-    public int getLength();
-    public char[] getData();
+    String getFileName();
+    void setFileName(String file_name);
+    int getLoadAddress();
+    void setLoadAddress(int load_address);
+    int getExecAddress();
+    void setExecAddress(int exec_address);
+    short getStartSector();
+    void setStartSection(short start_sector);
+    char getDirectory();
+    void setDirectory(char directory);
+    DFSDisk getParentDisk();
+    void setParentDisk(DFSDisk parent_disk);
+    int getLength();
+    char[] getData();
 }

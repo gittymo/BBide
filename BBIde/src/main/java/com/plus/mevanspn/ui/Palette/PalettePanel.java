@@ -58,9 +58,9 @@ public class PalettePanel extends JPanel {
 		paletteChangeListeners.add(pcl);
 	}
 	
-	private Palette palette;
+	private final Palette palette;
 	private Color activeColour;
-	private ArrayList<PaletteChangeListener> paletteChangeListeners;
+	private final ArrayList<PaletteChangeListener> paletteChangeListeners;
 	
 	final class ColourPreviewButton extends JButton {
 		ColourPreviewButton(Color colour, int index, PalettePanel parentPanel) {
@@ -96,7 +96,7 @@ public class PalettePanel extends JPanel {
 		}
 		
 		private Color colour;
-		private int index;
-		private PalettePanel parentPanel;
+		private final int index;
+		private final PalettePanel parentPanel;
 	}
 }

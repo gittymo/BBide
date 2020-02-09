@@ -123,12 +123,7 @@ public class DFSDisk {
 		short next_start_sector = 2;
 		if (files.size() > 1) {
 			// If there are files in the catalogue, sort by start_sector, ascending.
-			Collections.sort(files, new Comparator<DFSFile>() {
-				@Override
-				public int compare(DFSFile file1, DFSFile file2) {
-					return file1.getStartSector() - file2.getStartSector();
-				}
-			});
+			files.sort((file1, file2) -> file1.getStartSector() - file2.getStartSector());
 		}
 		// Now look for any space between files where the new file may fit.
 		for (int i = 0; i < files.size(); i++) {
@@ -146,12 +141,12 @@ public class DFSDisk {
 		
 		private final int sector_count;
 		DiskFormat(int sector_count) {
-			if (sector_count != 400 || sector_count !=800 || sector_count !=1600)
+			if (sector_count != 400 && sector_count !=800 && sector_count !=1600)
 				sector_count = 400;
 			this.sector_count = sector_count; }
 		public int getValue() { return this.sector_count; }
-	};
-	
+	}
+
 	public enum BootOption {
 		IGNORE(0), LOAD(1), RUN(2), EXEC(3);
 		
@@ -175,8 +170,8 @@ public class DFSDisk {
 		public double getValue() { return this.format; }
 	}
 	
-	private DiskFormat format;
-	private String name;						// 12 characters max!
-	private BootOption boot_opt;
-	private LinkedList<DFSFile> files;
+	private final DiskFormat format;
+	private final String name;						// 12 characters max!
+	private final BootOption boot_opt;
+	private final LinkedList<DFSFile> files;
 }

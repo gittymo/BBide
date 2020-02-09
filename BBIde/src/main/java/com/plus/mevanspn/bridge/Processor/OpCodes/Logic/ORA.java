@@ -92,6 +92,6 @@ public class ORA extends com.plus.mevanspn.bridge.Processor.OpCode {
 		memory.setNegativeZeroFlags();
 	}
 
-	private AddressMode addressMode;
-	private int address;
+	private final AddressMode addressMode;
+	private final int address;
 }

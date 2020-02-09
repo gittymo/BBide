@@ -37,7 +37,7 @@ public class INY extends OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException {
+	public void perform(Memory memory) throws MemoryMissingException {
 		// Make sure we've got a viable memory object
 		if (memory == null) throw new MemoryMissingException();
 

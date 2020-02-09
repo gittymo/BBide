@@ -51,8 +51,8 @@ public abstract class OpCode {
 		Accumulator( 1, 2),
 		Indirect(3, 5);
 
-		private int size;
-		private int time;
+		private final int size;
+		private final int time;
 		AddressMode(int size, int time) {
 			this.size = size;
 			this.time = time;

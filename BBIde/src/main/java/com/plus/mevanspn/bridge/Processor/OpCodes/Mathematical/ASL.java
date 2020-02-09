@@ -62,7 +62,7 @@ public class ASL extends OpCode {
 		// Get the value shifted one place to the left (i.e. value x 2)
 		char shiftedValue = (char) (baseValue << 1);
 		// Determine if the 9th bit is set.
-		boolean carry = (shiftedValue > 255) ? true : false;
+		boolean carry = shiftedValue > 255;
 		// Set the carry flag accoringly.
 		memory.flags.replace('C', carry);
 		// Set the negative and zero flags accordingly
@@ -71,6 +71,6 @@ public class ASL extends OpCode {
 		memory.setValueAt(((char) (shiftedValue & 255)), address, addressMode);
 	}
 
-	private AddressMode addressMode;
-	private int address;
+	private final AddressMode addressMode;
+	private final int address;
 }

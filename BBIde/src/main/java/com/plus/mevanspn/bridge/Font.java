@@ -41,7 +41,7 @@ final public class Font {
 		}
 	}
 
-	private HashMap<Character, FontCharacter> characters;
+	private final HashMap<Character, FontCharacter> characters;
 	private String fontName;
 	private static int fontCount = 0;
 }

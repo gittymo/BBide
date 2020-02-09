@@ -49,10 +49,10 @@ public class Palette {
 	}
 	
 	private String name;
-	private IndexColorModel colourModel;
-	private byte[] redComponents;
-	private byte[] greenComponents;
-	private byte[] blueComponents;
+	private final IndexColorModel colourModel;
+	private final byte[] redComponents;
+	private final byte[] greenComponents;
+	private final byte[] blueComponents;
 	
 	private static int paletteCount = 0;
 }

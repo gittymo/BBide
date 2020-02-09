@@ -27,8 +27,8 @@ public class BRK extends OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException,
-		MemoryMissingException
+	public void perform(Memory memory) throws
+			MemoryMissingException
 	{
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
@@ -39,7 +39,7 @@ public class BRK extends OpCode {
 		// Check if there's enough room on the stack
 		if (spIndex < 0x01FD) {
 			// There is so push the program counter onto the stack.
-			// Get the countents of the program counter.
+			// Get the contents of the program counter.
 			int pcValue = memory.registers.get("PC");
 			memory.memory[spIndex++] = (char) (pcValue & 0xFF00) >> 8;
 			memory.memory[spIndex++] = (char) (pcValue & 0xFF);
@@ -55,12 +55,4 @@ public class BRK extends OpCode {
 			memory.registers.replace("SP", spIndex + 1);
 		}
 	}
-
-	public BRK(AddressMode addressMode, int address) {
-		this.addressMode = addressMode;
-		this.address = address;
-	}
-
-	private AddressMode addressMode;
-	private int address;
 }
