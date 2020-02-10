@@ -49,6 +49,8 @@ public abstract class OpCode {
 		PreIndirectX(2,6),
 		PostIndirectY(2,5),
 		Accumulator( 1, 2),
+		XRegister( 1, 2),
+		YRegister(1,2),
 		Indirect(3, 5);
 
 		private final int size;

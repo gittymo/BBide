@@ -86,7 +86,7 @@ public class EOR extends com.plus.mevanspn.bridge.Processor.OpCode {
 		// Store the result back into the accumulator.
 		memory.registers.replace("A", result);
 		// Update the negative and zero flags accordingly.
-		memory.setNegativeZeroFlags();
+		memory.setNegativeZeroFlags(address, addressMode);
 	}
 
 	private final AddressMode addressMode;

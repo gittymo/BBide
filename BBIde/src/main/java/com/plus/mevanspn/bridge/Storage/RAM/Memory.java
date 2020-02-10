@@ -73,6 +73,12 @@ public class Memory {
 			case Accumulator: {
 				return registers.get("A");
 			}
+			case XRegister: {
+				return registers.get("X");
+			}
+			case YRegister: {
+				return registers.get("Y");
+			}
 			case Indirect : {
 				if (offset + 1 >= model.getRAMSize()) throw new InvalidAddressException();
 				int indirectAddress =
@@ -142,6 +148,14 @@ public class Memory {
 				registers.replace("A", value);
 			} break;
 
+			case XRegister : {
+				registers.replace("X", value);
+			} break;
+
+			case YRegister : {
+				registers.replace("Y", value);
+			}
+
 			default : throw new InvalidAddressModeException();
 		}
 	}
@@ -149,14 +163,14 @@ public class Memory {
 	/**
 	 * Performs an update of the negative and zero flags.
 	 */
-	public void setNegativeZeroFlags() {
-		int currentAccumulator = registers.get("A");
-		if (currentAccumulator > 127)
+	public void setNegativeZeroFlags(int address, OpCode.AddressMode addressMode) throws InvalidAddressException {
+		int value = this.getValueAt(address, addressMode);
+		if (value > 127)
 			flags.replace('N', Boolean.TRUE);
 		else
 			flags.replace('N', Boolean.FALSE);
 
-		if (currentAccumulator == 0)
+		if (value == 0)
 			flags.replace('Z', Boolean.TRUE);
 		else
 			flags.replace('Z', Boolean.FALSE);

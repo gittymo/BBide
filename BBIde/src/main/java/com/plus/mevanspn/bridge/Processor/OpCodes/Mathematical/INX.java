@@ -26,28 +26,18 @@ public class INX extends OpCode {
 		return 2;
 	}
 
-	private void setFlagsBasedUponResult(int result, Memory memory) {
-		if (result == 0) {
-			memory.flags.replace('Z', true);
-			memory.flags.replace('N', false);
-		} else if (result >= 128) {
-			memory.flags.replace('N', true);
-			memory.flags.replace('Z', false);
-		}
-	}
-
 	@Override
-	public void perform(Memory memory) throws MemoryMissingException {
+	public void perform(Memory memory) throws MemoryMissingException,InvalidAddressException {
 		// Make sure we've got a viable memory object
 		if (memory == null) throw new MemoryMissingException();
 
-		// Get the ddecremented value of the X register.
+		// Get the incremented value of the X register.
 		int result = memory.registers.get("X") + 1;
 
-		// Set the X register to the decremented value if appropriate.
+		// Set the X register to the incremented value if appropriate.
 		if (result < 127) memory.registers.replace("X", result);
 
 		// Set Zero and Negative flags according to the result.
-		setFlagsBasedUponResult(result, memory);
+		memory.setNegativeZeroFlags(0, AddressMode.XRegister);
 	}
 }

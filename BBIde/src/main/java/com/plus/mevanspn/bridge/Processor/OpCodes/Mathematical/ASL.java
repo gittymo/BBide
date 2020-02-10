@@ -63,10 +63,10 @@ public class ASL extends OpCode {
 		char shiftedValue = (char) (baseValue << 1);
 		// Determine if the 9th bit is set.
 		boolean carry = shiftedValue > 255;
-		// Set the carry flag accoringly.
+		// Set the carry flag accordingly.
 		memory.flags.replace('C', carry);
 		// Set the negative and zero flags accordingly
-		memory.setNegativeZeroFlags();
+		memory.setNegativeZeroFlags(address, addressMode);
 		// Store the shifted value less the 9th bit in the required memory location (or the Accumulator)
 		memory.setValueAt(((char) (shiftedValue & 255)), address, addressMode);
 	}

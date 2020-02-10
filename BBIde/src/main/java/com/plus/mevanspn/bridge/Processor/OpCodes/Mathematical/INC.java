@@ -4,7 +4,7 @@ import com.plus.mevanspn.bridge.Storage.RAM.*;
 import com.plus.mevanspn.bridge.Processor.OpCode;
 
 /** The INC class is used to create objects representing the INC assembler mnemonic in
- * BBide programs.  The purpose of this mnemonic is to oncrement the value at the given
+ * BBide programs.  The purpose of this mnemonic is to increment the value at the given
  * memory address by 1.  BE WARY! - This mnemonic does not set the Carry flag if the value 
  * exceeds the range a byte provides!
  * Depending on the result the following flags can be affected:
@@ -47,22 +47,12 @@ public class INC extends OpCode {
 		this.addressMode = addressMode;
 	}
 
-	private void setFlagsBasedUponResult(int result, Memory memory) {
-		if (result == 0) {
-			memory.flags.replace('Z', true);
-			memory.flags.replace('N', false);
-		} else if (result >= 128) {
-			memory.flags.replace('N', true);
-			memory.flags.replace('Z', false);
-		}
-	}
-
 	@Override
 	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException {
 		// Make sure we've got a viable memory object
 		if (memory == null) throw new MemoryMissingException();
 
-		// Get the ddecremented value of the memory location.
+		// Get the decremented value of the memory location.
 		int result;
 		switch (addressMode) {
 			case ZeroPage:
@@ -76,7 +66,7 @@ public class INC extends OpCode {
 		if (result <= 127) memory.setValueAt(result, addressOrValue, addressMode);
 
 		// Set Carry, Zero and Negative flags according to the result.
-		setFlagsBasedUponResult(result, memory);
+		memory.setNegativeZeroFlags(addressOrValue, addressMode);
 	}
 
 	private final AddressMode addressMode;

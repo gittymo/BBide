@@ -59,7 +59,6 @@ public class LDA extends OpCode {
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
 		if (addressMode == null) throw new InvalidAddressModeException();
-		// Clear the carry flag
 		memory.registers.replace("A", memory.getValueAt(this.address, this.addressMode));
 	}
 

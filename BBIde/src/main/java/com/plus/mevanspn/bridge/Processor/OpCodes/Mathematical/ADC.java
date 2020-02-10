@@ -6,7 +6,7 @@ public class ADC extends com.plus.mevanspn.bridge.Processor.OpCode {
 	@Override
 	public int[] getASM() {
 		switch (addressMode) {
-			case Immediate : return new int[] {0x69, value & 0xFF};
+			case Immediate : return new int[] {0x69, address & 0xFF};
 			case ZeroPage : return new int[] {0x65, address & 0xFF};
 			case ZeroPageX : return new int[] {0x75, address & 0xFF};
 			case Absolute : return new int[] {0x6D, (address & 0xFF), ((address >> 8) & 0xFF)};
@@ -68,19 +68,17 @@ public class ADC extends com.plus.mevanspn.bridge.Processor.OpCode {
 		}
 
 		// Set the negative and zero flags appropriately.
-		memory.setNegativeZeroFlags();
+		memory.setNegativeZeroFlags(address, addressMode);
 
 		// Store the total in the accumulator.
 		memory.registers.replace("A", total);
 	}
 
-	public ADC(char value, AddressMode addressMode, int address) {
-		this.value = Memory.getValidByteValue(value);
+	public ADC(AddressMode addressMode, int address) {
 		this.addressMode = addressMode;
 		this.address = address;
 	}
 
 	private final AddressMode addressMode;
-	private final char value;
 	private final int address;
 }

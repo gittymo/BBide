@@ -58,7 +58,6 @@ public class LDX extends OpCode {
 				addressMode != AddressMode.ZeroPageY &&
 				addressMode != AddressMode.Absolute &&
 				addressMode != AddressMode.AbsoluteY) throw new InvalidAddressException();
-		// Clear the carry flag
 		memory.registers.replace("X", memory.getValueAt(this.address, this.addressMode));
 	}
 

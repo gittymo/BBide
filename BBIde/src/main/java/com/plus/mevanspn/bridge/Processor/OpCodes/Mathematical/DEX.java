@@ -36,17 +36,17 @@ public class DEX extends OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws MemoryMissingException {
+	public void perform(Memory memory) throws MemoryMissingException, InvalidAddressException {
 		// Make sure we've got a viable memory object
 		if (memory == null) throw new MemoryMissingException();
 
-		// Get the ddecremented value of the X register.
+		// Get the decremented value of the X register.
 		int result = memory.registers.get("X") - 1;
 
 		// Set the X register to the decremented value if appropriate.
 		if (result >= -128) memory.registers.replace("X", result);
 
 		// Set Zero and Negative flags according to the result.
-		setFlagsBasedUponResult(result, memory);
+		memory.setNegativeZeroFlags(0, AddressMode.XRegister);
 	}
 }
