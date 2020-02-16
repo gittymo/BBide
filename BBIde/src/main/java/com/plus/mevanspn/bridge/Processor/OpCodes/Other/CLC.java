@@ -11,7 +11,7 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class CLC extends OpCode {
 	@Override
 	public int[] getASM() {
-		return new int[0];
+		return new int[] { 0x18 };
 	}
 
 	@Override
@@ -21,7 +21,7 @@ public class CLC extends OpCode {
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
+		return 2;
 	}
 
 	@Override

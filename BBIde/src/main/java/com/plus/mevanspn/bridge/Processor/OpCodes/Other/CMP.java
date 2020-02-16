@@ -18,14 +18,24 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class CMP extends OpCode {
 	@Override
 	public int[] getASM() {
-		return new int[0];
+		switch (addressMode) {
+			case Immediate: return new int[] { 0xC9 };
+			case ZeroPage: return new int[] { 0xC5, addressOrValue & 0xFF };
+			case ZeroPageX: return new int[] { 0xD5, addressOrValue & 0xFF };
+			case Absolute: return new int[] { 0xCD, addressOrValue & 0xFF, (addressOrValue & 0xFF00) >> 8 };
+			case AbsoluteX: return new int[] { 0xDD, addressOrValue & 0xFF, (addressOrValue & 0xFF00) >> 8 };
+			case AbsoluteY: return new int[] { 0xD9, addressOrValue & 0xFF, (addressOrValue & 0xFF00) >> 8 };
+			case PreIndirectX: return new int[] { 0xC1, addressOrValue & 0xFF };
+			case PostIndirectY: return new int[] { 0xD1, addressOrValue & 0xFF };
+			default: return null;
+		}
 	}
 
 	@Override
 	public int getSize() {
 		if (addressMode == null) return 0;
 		switch (addressMode) {
-			case Immediate :
+			case Immediate:
 			case ZeroPage:
 			case ZeroPageX:
 			case PreIndirectX:

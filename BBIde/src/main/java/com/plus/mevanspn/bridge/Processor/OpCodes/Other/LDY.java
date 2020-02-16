@@ -14,7 +14,14 @@ import com.plus.mevanspn.bridge.Storage.RAM.MemoryMissingException;
 public class LDY extends OpCode {
 	@Override
 	public int[] getASM() {
-		return new int[0];
+		switch (addressMode) {
+			case Immediate: return new int[] { 0xA0, address & 0xFF };
+			case ZeroPage: return new int[] { 0xA4, address & 0xFF };
+			case ZeroPageY: return new int[] { 0xB4, address & 0xFF };
+			case Absolute: return new int[] { 0xAC, address & 0xFF, (address & 0xFF00) >> 8 };
+			case AbsoluteX: return new int[] { 0xBC, address & 0xFF, (address & 0xFF00) >> 8 };
+			default: return null;
+		}
 	}
 
 	@Override

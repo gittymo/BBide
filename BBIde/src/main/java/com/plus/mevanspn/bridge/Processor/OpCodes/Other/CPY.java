@@ -29,7 +29,6 @@ public class CPY extends OpCode {
 
 	@Override
 	public int getSize() {
-		if (addressMode == null) return 0;
 		switch (addressMode) {
 			case Immediate :
 			case ZeroPage: return 2;
@@ -40,7 +39,6 @@ public class CPY extends OpCode {
 
 	@Override
 	public int getBaseCycles() {
-		if (addressMode == null) return 0;
 		switch (addressMode) {
 			case Immediate : return 2;
 			case ZeroPage : return 3;

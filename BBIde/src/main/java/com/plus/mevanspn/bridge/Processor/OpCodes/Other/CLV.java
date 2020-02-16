@@ -10,7 +10,7 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class CLV extends OpCode {
 	@Override
 	public int[] getASM() {
-		return new int[0];
+		return new int[] { 0xB8 };
 	}
 
 	@Override
@@ -20,7 +20,7 @@ public class CLV extends OpCode {
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
+		return 2;
 	}
 
 	@Override

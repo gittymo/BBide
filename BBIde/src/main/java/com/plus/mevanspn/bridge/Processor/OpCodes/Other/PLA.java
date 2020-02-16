@@ -26,7 +26,7 @@ public class PLA extends OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws MemoryMissingException {
+	public void perform(Memory memory) throws MemoryMissingException, InvalidAddressException {
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
 
@@ -35,7 +35,7 @@ public class PLA extends OpCode {
 		// Push the value onto the accumulator.
 		memory.registers.replace("A", stackValue);
 		// Set the appropriate zero and negative flags.
-		memory.setNegativeZeroFlags();
+		memory.setNegativeZeroFlags(address, addressMode);
 	}
 
 	private AddressMode addressMode;

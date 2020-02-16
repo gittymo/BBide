@@ -13,7 +13,7 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class BRK extends OpCode {
 	@Override
 	public int[] getASM() {
-		return new int[0];
+		return new int[] { 0x00 };
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class BRK extends OpCode {
 
 	@Override
 	public int getBaseCycles() {
-		return 0;
+		return 7;
 	}
 
 	@Override
