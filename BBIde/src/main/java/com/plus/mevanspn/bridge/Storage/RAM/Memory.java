@@ -15,11 +15,11 @@ public class Memory {
 	}
 
 	public static char getValidByteValue(char value) {
-		return (char) ((value < 0) ? (-value) % 256 : value % 256);
+		return (char) ((value < 0) ? (-value) % 129 : value % 128);
 	}
 
 	public static int getValidShortValue(int value) {
-		return (value < 0) ? (-value) % 65536 : value % 65536;
+		return (value < 0) ? (-value) % 32769 : value % 32768;
 	}
 
 	public int getValueAt(int offset, OpCode.AddressMode addressMode)
@@ -91,7 +91,7 @@ public class Memory {
 	}
 	
 	public void setValueAt(int value, int offset, OpCode.AddressMode addressMode)
-		throws InvalidAddressModeException, InvalidAddressException
+		throws InvalidAddressModeException, InvalidAddressException, InvalidValueException
 	{
 		if (offset < 0 || offset >= model.getRAMSize()) throw new InvalidAddressException();
 		if (offset > 255 && (
@@ -99,6 +99,7 @@ public class Memory {
 						addressMode != OpCode.AddressMode.AbsoluteX &&
 						addressMode != OpCode.AddressMode.AbsoluteY
 				)) throw new InvalidAddressException();
+		if (value < -128 || value > 127) throw new InvalidValueException();
 		switch (addressMode) {
 			case Immediate : throw new InvalidAddressModeException();
 			case ZeroPage :
@@ -198,6 +199,8 @@ public class Memory {
 		flags.put('Z', false);  // Zero flag
 		flags.put('I', false);  // Interrupt disable
 	}
+
+
 
 	private void initMemory() {
 		memory = new int[model.getRAMSize()];

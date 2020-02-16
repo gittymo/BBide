@@ -13,7 +13,7 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class INX extends OpCode {
 	@Override
 	public int[] getASM() {
-		return new int[0];
+		return new int[] { 0xE8 };
 	}
 
 	@Override

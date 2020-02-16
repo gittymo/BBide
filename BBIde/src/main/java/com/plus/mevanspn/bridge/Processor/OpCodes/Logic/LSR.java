@@ -1,10 +1,7 @@
 package com.plus.mevanspn.bridge.Processor.OpCodes.Logic;
 
 import com.plus.mevanspn.bridge.Processor.OpCode;
-import com.plus.mevanspn.bridge.Storage.RAM.InvalidAddressException;
-import com.plus.mevanspn.bridge.Storage.RAM.InvalidAddressModeException;
-import com.plus.mevanspn.bridge.Storage.RAM.Memory;
-import com.plus.mevanspn.bridge.Storage.RAM.MemoryMissingException;
+import com.plus.mevanspn.bridge.Storage.RAM.*;
 
 /** The LSR class is used to create objects representing the LSR assembler mnemonic in
  * BBide programs.  The purpose of this mnemonic is to shift the contents of a memory
@@ -15,7 +12,14 @@ import com.plus.mevanspn.bridge.Storage.RAM.MemoryMissingException;
 public class LSR extends OpCode {
 	@Override
 	public int[] getASM() {
-		return new int[0];
+		switch (addressMode) {
+			case Accumulator: return new int[] { 0x4A };
+			case ZeroPage: return new int[] { 0x46, address & 0xFF };
+			case ZeroPageX: return new int[] { 0x56, address & 0xFF };
+			case Absolute: return new int[] { 0x4E, address & 0xFF, (address & 0xFF00) >> 8};
+			case AbsoluteX: return new int[] { 0x5E, address & 0xFF, (address & 0xFF00) >> 8};
+			default: return null;
+		}
 	}
 
 	@Override
@@ -50,7 +54,8 @@ public class LSR extends OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException {
+	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException,
+			InvalidValueException {
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
 		if (addressMode == null) throw new InvalidAddressModeException();

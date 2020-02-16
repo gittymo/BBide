@@ -48,7 +48,7 @@ public class ASL extends OpCode {
 
 	@Override
 	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException,
-		MemoryMissingException
+		MemoryMissingException, InvalidValueException
 	{
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();

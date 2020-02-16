@@ -15,7 +15,13 @@ import com.plus.mevanspn.bridge.Processor.OpCode;
 public class INC extends OpCode {
 	@Override
 	public int[] getASM() {
-		return new int[0];
+		switch (addressMode) {
+			case ZeroPage: return new int[] { 0xE6, addressOrValue & 0xFF };
+			case ZeroPageX: return new int[] { 0xF6, addressOrValue & 0xFF };
+			case Absolute: return new int[] { 0xEE, addressOrValue & 0xFF, (addressOrValue & 0xFF00) >> 8};
+			case AbsoluteX: return new int[] { 0xFE, addressOrValue & 0xFF, (addressOrValue & 0xFF00) >> 8};
+			default: return null;
+		}
 	}
 
 	@Override
@@ -48,7 +54,8 @@ public class INC extends OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException {
+	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException,
+			InvalidValueException {
 		// Make sure we've got a viable memory object
 		if (memory == null) throw new MemoryMissingException();
 

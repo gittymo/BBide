@@ -1,9 +1,6 @@
 package com.plus.mevanspn.bridge.Processor.OpCodes.Logic;
 
-import com.plus.mevanspn.bridge.Storage.RAM.InvalidAddressException;
-import com.plus.mevanspn.bridge.Storage.RAM.InvalidAddressModeException;
-import com.plus.mevanspn.bridge.Storage.RAM.Memory;
-import com.plus.mevanspn.bridge.Storage.RAM.MemoryMissingException;
+import com.plus.mevanspn.bridge.Storage.RAM.*;
 
 /** The ROR mnemonic causes the value in memory (or the Accumulator) to shift right one bit.  The bit shifted out of
  * the byte (bit 0) is stored in the carry flag, whose original contents are stored in bit 7 of the memory value.
@@ -63,7 +60,8 @@ public class ROR extends com.plus.mevanspn.bridge.Processor.OpCode {
 	}
 
 	@Override
-	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException {
+	public void perform(Memory memory) throws InvalidAddressModeException, InvalidAddressException, MemoryMissingException,
+			InvalidValueException {
 		// Make sure we've got a valid memory object
 		if (memory == null) throw new MemoryMissingException();
 		// We don't allow direct access to this mnemonic using these addressing modes, so throw an exception.
