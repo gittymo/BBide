@@ -1,6 +1,7 @@
 package com.plus.mevanspn.bridge.Storage.RAM;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 import com.plus.mevanspn.bridge.Processor.OpCode;
 import com.plus.mevanspn.bridge.*;
@@ -200,7 +201,22 @@ public class Memory {
 		flags.put('I', false);  // Interrupt disable
 	}
 
+	public int getFlags() {
+		int flagsAsByte = 0, bitValue = 1;
+		for (Map.Entry<Character, Boolean> entry : flags.entrySet()) {
+			flagsAsByte += (entry.getValue()) ? bitValue : 0;
+			bitValue *= 2;
+		}
 
+		return flagsAsByte;
+	}
+
+	public void setFlags(int flagsAsByte) {
+		int bitValue = 1;
+		for (Map.Entry<Character, Boolean> entry : flags.entrySet()) {
+			entry.setValue((flagsAsByte & bitValue) > 0);
+		}
+	}
 
 	private void initMemory() {
 		memory = new int[model.getRAMSize()];

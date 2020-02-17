@@ -49,9 +49,8 @@ public class JSR extends OpCode {
 		if (memory == null) throw new MemoryMissingException();
 		// Make sure we're using the correct addressing mode
 		if (addressMode != AddressMode.Absolute) throw new InvalidAddressModeException();
-		// Get and push the program counter onto the stack
-		int pc = memory.registers.get("PC");
-		memory.stack.push(pc);
+		// Push the program counter onto the stack
+		memory.stack.pushPC();
 		// Get the new program counter address
 		int newPCAddress = memory.getValueAt(address, addressMode);
 		// Move the program counter to new address.

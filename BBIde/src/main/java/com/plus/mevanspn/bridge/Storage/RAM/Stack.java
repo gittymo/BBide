@@ -30,13 +30,23 @@ import com.plus.mevanspn.bridge.Storage.RAM.StackOverflowException;
 			if (value > 0) throw new StackOverflowException();
 	 }
 
-	public int pull() {
+	public int pull() throws StackOverflowException {
 		int stackPointer = memory.registers.get("SP");
-		if (stackPointer > 0x100) {
+		if (stackPointer >= 0x100) {
 			memory.registers.replace("SP", stackPointer - 1);
 			return memory.memory[stackPointer];
+		} else {
+			memory.registers.replace("SP", 0x100);
+			throw new StackOverflowException();
 		}
-		return 0;
+	}
+
+	public void pushPC() throws StackOverflowException {
+		memory.stack.push(memory.registers.get("PC"));
+	}
+
+	public void pullPC() throws StackOverflowException {
+	 	memory.registers.replace("PC", memory.stack.pull() + (memory.stack.pull() << 8));
 	}
 
 	private final Memory memory;
